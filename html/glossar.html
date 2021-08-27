@@ -1,44 +1,714 @@
 <!DOCTYPE html>
 <html lang="de">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Einführung in die Rechnerarchitektur</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
     <link rel="stylesheet" href="/era/css/main.css">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj"
+        crossorigin="anonymous"></script>
     <script src="https://kit.fontawesome.com/f4e8912340.js" crossorigin="anonymous"></script>
 </head>
+
 <body>
     <nav class="navbar navbar-expand-md navbar-dark bg-dark">
         <div class="container-fluid">
-          <span class="navbar-brand mb-0 h1">ERA</span>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-          </button>
-          <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav">
-              <li class="nav-item">
-                <a class="nav-link" aria-current="page" href="/era">Home</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link active" href="/era/html/glossar">Glossar</a>
-              </li>
-            </ul>
-          </div>
+            <span class="navbar-brand mb-0 h1">ERA</span>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link" aria-current="page" href="/era">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="/era/html/glossar">Glossar</a>
+                    </li>
+                </ul>
+            </div>
         </div>
-      </nav>
+    </nav>
 
-      <div class="container">
+    <div class="container">
         <h1>Glossar</h1>
-      </div>
+        <table class="table table-striped">
+            <tr>
+                <td>
+                    "Load/Store"-Architektur</td>
+                <td>(Register-Register-Maschine)
+                    • Speicherzugriffe explizit als Maschinenbefehle
+                    • Arithmetik nur aus Registern
+                    • Registerindirekte Adressierung mit 12bit oder Register Offset
+                    • Unterstützt Prädekrement/Postinkrement</td>
+            </tr>
+            <tr>
+                <td>7 Eigenschaften von Neumann</td>
+                <td>1. Strukturunabhängigkeit
+                    2. 4 Werke
+                    3. Sequentiell
+                    4. Binär
+                    5. Programme & Daten in einem Speicher
+                    6. Speicher besteht aus Zeilen fester Grösse
+                    7. Sprünge möglich</td>
+            </tr>
+            <tr>
+                <td>Adressierungsarten</td>
+                <td>Direkte A.
+                    Registerindirekte A.
+                    Registerindirekt mit Dekr/Inkr
+                    Registerindirekt mit Displacement
+                    Indizierte A.
+                    Indizierte A. mit Skalierungsfaktor
+                    Befehlszähler-relative A.
+                    Speicherindirekte A.</td>
+            </tr>
+            <tr>
+                <td>ASIC</td>
+                <td>Application Specific Integrated Circuit</td>
+            </tr>
+            <tr>
+                <td>Befehlsformate</td>
+                <td>• Einheitliches Befehlsformat (RISC)
+                    + einfach zu dekodieren
+                    • Variables Befehlsformat (CISC)
+                    + etrem flexibel</td>
+            </tr>
+            <tr>
+                <td>Befehlszyklus</td>
+                <td>1. Befehl holen
+                    2. Dekodieren
+                    3. Adresse evaluieren
+                    4. Operand -> Rechnwerk
+                    5. Befehl ausführen
+                    6. In Accumulator/Register
+                    7. BZ erhöhen</td>
+            </tr>
+            <tr>
+                <td>Behavioral Programming (VHDL)</td>
+                <td>Ähnlich sequentieller Programme
+
+                    Implementiert Automaten, auf Ebene der booleschen Gleichungen</td>
+            </tr>
+            <tr>
+                <td>Benutzermodus</td>
+                <td>• Eingeschränkter Zugriff
+                    • Keine privilegierten Befehle wie z.B. Ein-/Ausgabe
+                    • Kein Zugriff auf Konfigurationsregister</td>
+            </tr>
+            <tr>
+                <td>Big-Endians and Little-Endians</td>
+                <td>Intel -> Little Endian (Höchster Wert an niedrigster Adresse -> Endet mit dem kleinsten Wert)</td>
+            </tr>
+            <tr>
+                <td>Block Devices</td>
+                <td>- Abstraktion im BS: Blöcke von Daten
+                    - Benutzer kann auf einzelne Daten zugriefen
+                    - Üblicherweise mit Dateisystem verbunden
+                    - z.B. Festplattenspeicher</td>
+            </tr>
+            <tr>
+                <td>Branch Prediction</td>
+                <td>Vorhersage, ob Sprung genommen wird
+                    Bei inkorrekter Vorhersage muss Pipeline neu aufgesetzt werden -> teuer</td>
+            </tr>
+            <tr>
+                <td>Cache Directory Protokolle</td>
+                <td>Zentrales Verzeichnis, welches übersicht von Kopien in Caches hat. Heutiger Standard, kein Snooping
+                    mehr</td>
+            </tr>
+            <tr>
+                <td>Cache Index Bits</td>
+                <td>Bestimmt die Cachezeile, in der Adresse sein kann.
+                    32 Byte pro Cachezeile, Cache Grösse 32 KiB -> 1024 Cachezeilen -> 10 bit Index
+
+                    Bei Cache Sets, wird das Set beschrieben</td>
+            </tr>
+            <tr>
+                <td>Cache Offset Bits</td>
+                <td>Unterste Bits, bestimmen byte(?) index in einer Zeile.
+                    32 Byte pro Cachezeile -> 5bit</td>
+            </tr>
+            <tr>
+                <td>Cache Snooping</td>
+                <td>Gemeinsamer Bus zwischen Caches, alle Teilnehmer hören mit.
+                    -> Teilnehmer passen laufend Cache-Inhalt an
+                    -> MSI oder MESI Automat
+                    + Einfach zu implementieren
+                    - Busse skalieren schlecht</td>
+            </tr>
+            <tr>
+                <td>Cache Tag Bit</td>
+                <td>Oberste Bits, beschreiben welche Daten in Cachezeile sind</td>
+            </tr>
+            <tr>
+                <td>Capacity Cache Misses</td>
+                <td>Der Speicherblock wäre auch verdrängt worden, wenn der Cache vollassoziativ wäre</td>
+            </tr>
+            <tr>
+                <td>CISC: abbreviation und vor/nachteile</td>
+                <td>CISC: Complex Instruction Set Computer
+                    Vorteil:
+                    • einfache Programmierbarkeit, geringer Speicherbedarf
+                    • Realisiert durch Mikroprogramme
+                    Nachteile:
+                    • komplexe (langsame) Implementierung insbesondere Dekodierung, evtl. viele Funktionen ungenutzt
+                </td>
+            </tr>
+            <tr>
+                <td>CMOS</td>
+                <td>complementary metal-oxide semiconductor.
+                    Besteht aus NPN und PNP Transistor
+
+                    Vorteile
+                    - 0 und 1 geschaltet
+                    - weniger Verlustleistung
+                    - weniger Hitzeentwicklung
+                    - weniger Störanfällig</td>
+            </tr>
+            <tr>
+                <td>Cold Cache Misses</td>
+                <td>Erster Zugriff auf eine Adresse im Cache, nicht zu vermeiden</td>
+            </tr>
+            <tr>
+                <td>Conflict Cache Misses</td>
+                <td>Speicherblock wurde verdrängt, da ein andere Block auf das gleiche Cache Set abgebildet wurde</td>
+            </tr>
+            <tr>
+                <td>CPLD</td>
+                <td>A complex programmable logic device that consists basically of multiple SPLD arrays with
+                    programmable interconnections.</td>
+            </tr>
+            <tr>
+                <td>Dataflow Programming (VHDL)</td>
+                <td>Boolesche Gleichungen
+
+                    +Einfacher zu beschreiben/ zu verstehen
+                    - Weniger Kontrolle</td>
+            </tr>
+            <tr>
+                <td>Decoder</td>
+                <td>n Eingänge zu 2^n einzigartigen Ausgängen
+                    (Nur ein Ausgang auf 1)
+                    Zb 2 zu 4 Bit Decoder</td>
+            </tr>
+            <tr>
+                <td>Dennard Scaling</td>
+                <td>Mit kleineren Transistoren geht auch die nötige Stromleistung zurück
+                    -> Endet ca 2005, da Prozessoren nicht mehr mehr Leistung benötigen, man setzt auf mehrere Kerne
+                </td>
+            </tr>
+            <tr>
+                <td>Direct I/O</td>
+                <td>- Spezielle Befehle im Befehlssatz
+                    - Separate Adressen für I/O Geräte
+                    - Separate Bus für I/O Operationen
+                    - Prozessor kontrolliert E/A, wartet auf Daten
+                    + schnell
+                    - verschwendet Ressourcen</td>
+            </tr>
+            <tr>
+                <td>Direct Mapped Cache</td>
+                <td>Jede Adresse passt zu einer Cachezeile, index bit bestimmen die Lage der Daten im Cache.
+
+                    + Einfach zu berechnen -> schnell
+                    + Einfach zu bauen
+
+                    -Unflexibel
+                    -Häufige Verdrängung von Cachezeilen</td>
+            </tr>
+            <tr>
+                <td>DMA</td>
+                <td>Direct Memory Access
+                    - Prozessor beschreibt Transfer
+                    - Unabhängiger Kontroller führ ihn aus
+                    - Interrupt bei Abschluss</td>
+            </tr>
+            <tr>
+                <td>DRAM</td>
+                <td>Dynamic Random Access Memory
+
+                    Kondensator mit Information
+                    Auswahlleitung & Bitleitung
+
+                    Schreiben: Auswahlsignal setzen, 0 oder 1 an Bitleitung, Lädt oder entlädt Kondensator
+                    Lesen: Auswahlsignal setzen, Wert zwischen 0 und 1 auf Bitleitung. Wenn 0 lädt sich der Kondensator,
+                    Bitleitung geht auf 0 und andersrum</td>
+            </tr>
+            <tr>
+                <td>Encoder</td>
+                <td>2^n Eingänge werden binär dekodiert auf n Ausgänge, so lange nur ein Eingang an ist.</td>
+            </tr>
+            <tr>
+                <td>Ethernet</td>
+                <td>Am weitesten verbreitete Familie von Netztechnologien
+                    - Früher Shared Medium -> Quasi ein Bus
+                    - Heute Point to Point (Switched Network)</td>
+            </tr>
+            <tr>
+                <td>Exceptions</td>
+                <td>• Ausgelöst von einer Operation im Programm ( von innen ) + synchron
+                    • Beispiel: nicht erlaubte Befehle (e.g. divide by zero)</td>
+            </tr>
+            <tr>
+                <td>Exklusiver Cache</td>
+                <td>Jeder Speicherblock existiert nur einmal in der Cachehierarchie</td>
+            </tr>
+            <tr>
+                <td>FPGA</td>
+                <td>Field Programmable Gate Array
+
+                    - Emulation von beliebigen Schaltungen
+                    - Einfacher als CPLDs</td>
+            </tr>
+            <tr>
+                <td>Gründe für Moduswechsel</td>
+                <td>• durch speziellen Befehl
+                    • durch Interrupts/Exceptions</td>
+            </tr>
+            <tr>
+                <td>Hardware Prefetching</td>
+                <td>Hardware untersucht Zugriffsadressen -> Erkennt Muster -> Liest zukünftige Daten.
+                    zb. Prefetch Folgezeile oder Strided Prefetcher</td>
+            </tr>
+            <tr>
+                <td>Hardware Thread</td>
+                <td>- Ausführungseinheit in Hardware mit BZ
+                    - Getrennte Registersätze
+                    - Führt eine Programmsequenz aus
+                    Oft auch Kern genannt</td>
+            </tr>
+            <tr>
+                <td>HDL</td>
+                <td>Hardware Description Language
+
+                    Beschreibung einzelner Komponenten für Entwicklung von FPGAs</td>
+            </tr>
+            <tr>
+                <td>Inklusiver Cache</td>
+                <td>Alle Speicherblöcke sind auch in dem nächst grösseren Cache enthalten</td>
+            </tr>
+            <tr>
+                <td>Interrupt-driven I/O</td>
+                <td>Prozessor löst Zugriff aus, E/A arbeitet alleine, Signalisiert abschluss durch Interrupt</td>
+            </tr>
+            <tr>
+                <td>Interrupts</td>
+                <td>• Erlauben dem Prozessor auf externe( Tastaur z.B.), asynchrone Ereignisse zu reagieren
+                    • kann ignoriert werden</td>
+            </tr>
+            <tr>
+                <td>LUT</td>
+                <td>Lookup Table
+                    Zentrales Element eines Logikblocks in einem FPGA.
+                    - 3-6bit Eingang
+                    - 1 bit Ausgang
+                    - Beliebige Schaltung
+                    - Optional mit Flipflop
+                    zb als SRAM realisiert</td>
+            </tr>
+            <tr>
+                <td>Mealy Automat</td>
+                <td>Ein deterministischer endlicher Automat, dessen Ausgabe von seinem Zustand und seiner Eingabe
+                    abhängt.</td>
+            </tr>
+            <tr>
+                <td>Mehrkern Architektur</td>
+                <td>Mehrere HW Threads in einem System
+                    - getrennte Kerne
+                    - Replikation Leit & Rechenwerk
+                    - Gemeinsamer Speicher
+                    - Meist gemeinsames E/A Werk
+                    - Voller Speed-Up (Gegensatz zu SMT)</td>
+            </tr>
+            <tr>
+                <td>Memory Mapped I/O</td>
+                <td>- Ansprechen der Geräte über Speicherbereiche
+                    - Speicher Teil des normalen Speicherbereichs
+                    - Kontrolliert duch virtuelle Speicherverwaltung
+                    - Heutiger Standard</td>
+            </tr>
+            <tr>
+                <td>Memory Mountain</td>
+                <td>Umso grösser der Speicher -> Umso langsamer
+                    Umso grösser die Strides -> Umso langsamer</td>
+            </tr>
+            <tr>
+                <td>Mengenassoziativer Cache</td>
+                <td>- Jede Adresse kann auf einen Teil der Cache Zeilen abgebildet werden
+                    - Mehrere Cache-Sets / Reduzierte Zahl von Index bits
+                    Beispiel: 4-way associative = 4 Zeilen pro Cacheset</td>
+            </tr>
+            <tr>
+                <td>MESI Protokoll</td>
+                <td>MSI, aber mit Exclusive Zustand
+
+                    Exclusive: Wert in einem Cache, unverändert</td>
+            </tr>
+            <tr>
+                <td>MIMD</td>
+                <td>Multiple Instruction Multiple Data
+                    n Rechenwerke, n Leitwerke
+                    -> Parallele Systeme
+                    - Mehrere HW Threads, prinzipiell unkoordiniert, keine direkten abhängigkeiten, parallele Ausführung
+                    - Gemeinsamer Speicher, sonst getrennte Maschinen</td>
+            </tr>
+            <tr>
+                <td>MMU</td>
+                <td>memory management unit, dedicated hardware on the CPU that translates virtual addresses on the fly
+                    using a lookup table stored in main memory</td>
+            </tr>
+            <tr>
+                <td>Moore Automat</td>
+                <td>Ein endlicher Automat, dessen Ausgabe ausschließlich von seinem Zustand abhängt.</td>
+            </tr>
+            <tr>
+                <td>MSI Protokoll</td>
+                <td>Jede Cachezeile muss ihren Status mitverfolgen
+
+                    - Modified: Cachezeile lokal geändert, Speicher nicht koheränt
+                    - Shared: Wert in mindestens einem Cache, kohärent
+                    - Invalid: Cacheblock nicht gültig oder veraltet</td>
+            </tr>
+            <tr>
+                <td>Multiplexer</td>
+                <td>Wid genutzt um Daten auszuwählen. Es wird anhand eines Selector- Eingangs ein Eingang ausgewählt und
+                    dieser weitergeleitet zum Ausgang.</td>
+            </tr>
+            <tr>
+                <td>Multithreading</td>
+                <td>Mehrere HW Threads in einem Prozessorkern
+                    - Einzelner BZ und Register
+                    - Ressourcen geteilt
+                    - Umschalten nach x Takten
+                    - Meist Fork/Join (Master startet einen neuen Thread) (siehe Java Threads)</td>
+            </tr>
+            <tr>
+                <td>Nachteile DRAM</td>
+                <td>- Grosser Energiebedarf wenn aktiv & passiv
+                    - Langsamer Zugriff</td>
+            </tr>
+            <tr>
+                <td>Nachteile SRAM</td>
+                <td>- Relativ gross & teuer
+                    - Grosser Energiebedarf wenn aktiv</td>
+            </tr>
+            <tr>
+                <td>NAND und NOR Flash</td>
+                <td>NAND
+                    - schneller, kleiner
+                    - Gut für Speicher
+                    - Zugriff nur über Blöcke
+                    - NAND SSDs für kleine Zugriffe mit NOR Seitentabellen realisiert
+                    - Begrenzte Anzahl Löschvorgänge
+                    NOR
+                    - Zuverlässiger, Einzelzugriff
+                    - Gut für BIOS, Boot Medien</td>
+            </tr>
+            <tr>
+                <td>Nebenläufige und Parallele Programme</td>
+                <td>Nebenläufig
+                    - Getrennte Aufgaben
+                    - Lose Kooperation
+                    - Bsp. GUI, E/A
+
+                    Parallel
+                    - Gemeinsame Aufgabe
+                    - Enge Kopplung
+                    - Bsp. numerische Simulation, Suchalgorithmen</td>
+            </tr>
+            <tr>
+                <td>NIC</td>
+                <td>Network Interface Card</td>
+            </tr>
+            <tr>
+                <td>Non-uniform Memory Access</td>
+                <td>- Speicher ist verteilt über mehrere Kerne
+                    - Inter-Kern Netzwerk
+                    - Standard, da Controller im Prozessor
+                    -> Schnelle lokale Zugriffe
+                    -> Datenplatzierung wichtig</td>
+            </tr>
+            <tr>
+                <td>NPN Transistor</td>
+                <td>NPN ist ein Arbeitskontakt -> Leitend, falls Strom anliegt</td>
+            </tr>
+            <tr>
+                <td>Out-Of-Order</td>
+                <td>Auch dynamisches Scheduling genannt.
+                    Unabhängige Instruktionen können ausgeführt werden, obwohl vorherige Operationen blockiert sind.
+                    Trotzdem transparent</td>
+            </tr>
+            <tr>
+                <td>PAL / GAL</td>
+                <td>Programmable/General Array Logic
+                    UND programmierbar
+                    ODER fest
+
+                    PAL -> Non-Volatile
+                    GAL -> Volatile</td>
+            </tr>
+            <tr>
+                <td>Physically Indexed Cache</td>
+                <td>Cache nach MMU, Cache arbeitet mit physikalischen Adressen
+                    + Überlebt Prozesswechsel
+                    + Gut für grosse Caches
+                    - Jeder Zugriff durch MMU</td>
+            </tr>
+            <tr>
+                <td>Pipeline Control Hazard</td>
+                <td>Verursacht durch Sprünge, da Befehl unbekannt</td>
+            </tr>
+            <tr>
+                <td>Pipeline Data Hazard</td>
+                <td>Datenabhängigkeiten nicht erfüllt</td>
+            </tr>
+            <tr>
+                <td>Pipeline Structural Hazard</td>
+                <td>Ressourcenprobleme in der Hardware</td>
+            </tr>
+            <tr>
+                <td>Pipelining</td>
+                <td>- Bearbeitung eines Objekts in Teilschritte zerlegt, sequentiell ausgeführt
+                    - Die Phasen werden für verschiedene Objekte überlappend abgearbeitet
+                    - Software oder Hardware</td>
+            </tr>
+            <tr>
+                <td>PLA</td>
+                <td>Programmable Logic Array
+                    Für DNFs, UND gefolgt von ODER, beides programmierbar</td>
+            </tr>
+            <tr>
+                <td>PLD</td>
+                <td>Programmable Logic Device</td>
+            </tr>
+            <tr>
+                <td>Probeme bei OoO Execution</td>
+                <td>- Erhöhte Buchhaltunkgskomplexität
+                    - Speicher muss konsistent gehalten werden -> Reorder Buffers</td>
+            </tr>
+            <tr>
+                <td>PROM</td>
+                <td>Programmable Read-Only Memory
+                    UND fest
+                    ODER programmierbar
+
+                    EPROM -> Erasable PROM, mit UV Licht
+                    EEPROM -> Electrcially EPROM</td>
+            </tr>
+            <tr>
+                <td>RISC: abbreviation und vor/nachteile</td>
+                <td>RISC: Reduced Instruction Set Computer
+                    Vorteil:
+                    • einfache, effiziente, schnelle Implementierung
+                    • Realisiert durch feste Verdrahtung
+                    Nachteil:
+                    • schwierigere Programmierbarkeit - Aber: das erledigt der Compiler</td>
+            </tr>
+            <tr>
+                <td>ROM</td>
+                <td>Read Only Memory
+                    UND fest
+                    ODER fest</td>
+            </tr>
+            <tr>
+                <td>SIMD</td>
+                <td>Single Instruction Multiple Data
+                    n Rechenwerke, 1 Leitwerk
+
+                    -> Pipelines, Vectors, GPUs (Moderne GPUs sind MIMD, mehrere extreme SIMD Blöcke)
+                    Mehrere Daten werden durch einen Maschinenbefehl geleitet</td>
+            </tr>
+            <tr>
+                <td>Simultaneous Multithreading (SMT)</td>
+                <td>Gleichzeitige Nutzung von Ressourcen, passt zu OoO und Superskalarität</td>
+            </tr>
+            <tr>
+                <td>SISD</td>
+                <td>Single Instruction Single Data
+                    1 Rechenwerk, 1 Leitwerk
+
+                    -> Seq. Verarbeitung von Neumann</td>
+            </tr>
+            <tr>
+                <td>Software Prefetching</td>
+                <td>Explizite Instruktionen
+                    + Unregelmässige Zugriffe können verbessert werden
+                    - Benötigt Codeänderungen
+
+                    Generell ist Software Prefetching nicht blockierend und erzeugt keine Ausnahmen</td>
+            </tr>
+            <tr>
+                <td>Spin-Locks</td>
+                <td>Busy waiting -> Siehe EIDI</td>
+            </tr>
+            <tr>
+                <td>SPLD</td>
+                <td>simple programmable logic device
+                    Schaltnetz aus einem UND und einem ODER Array. Beide evtl. programmierbar</td>
+            </tr>
+            <tr>
+                <td>SRAM</td>
+                <td>Static Random Access Memory
+
+                    Nutzung in Register & Caches
+                    Prinzip ähnlich zu Latch.
+                    Schreiben: Bit auf 1, Nicht Bit auf 0, Select auf 1, Inverter pegeln sich ein
+                    Lesen: Bit auf 1, Nicht Bit auf 1, Inverter ziehen somit einen Ausgang auf 0, Spannungsabfall wird
+                    gemessen</td>
+            </tr>
+            <tr>
+                <td>Stream Devices</td>
+                <td>- Abstraktion im BS: Reihe/Strom von Bytes
+                    - Zugriff meist sequentiell
+                    - z.B. Tastatur, Serielle Schnittstellen</td>
+            </tr>
+            <tr>
+                <td>Structural Programming (VHDL)</td>
+                <td>Verbundenen einzelne Komponenten
+
+                    + Volle Kontrolle
+                    - Aufwendig</td>
+            </tr>
+            <tr>
+                <td>Superskalarprinzip</td>
+                <td>Ein superskalarer Prozessor verfügt im Vergleich zu einem Prozessor mit sequentieller Pipeline über
+                    die n-fache Anzahl von Funktionseinheiten, Datenpfaden, Dekodierern, etc. -> n Befehle gleichzeitig
+                    ausführen</td>
+            </tr>
+            <tr>
+                <td>Systemmodus</td>
+                <td>• Voller (=privilegierter) Zugriff auf alle Rechnerkomponenten
+                    • Für das Betriebssystem</td>
+            </tr>
+            <tr>
+                <td>Thread vs Prozess</td>
+                <td>Threads sind eng gekoppelt
+                    - Gemeinsamer Adressraum
+                    - Schnelle Umschaltung
+                    - Gemeinsame Ressourcen (Dateien...)
+
+                    Prozesse sind lose gekoppelt
+                    - Getrennte Adressräume
+                    - Bessere Isolierung</td>
+            </tr>
+            <tr>
+                <td>TLB</td>
+                <td>Translation Lookaside Buffer - small cache of page table entries in the MMU used to speed up address
+                    translation</td>
+            </tr>
+            <tr>
+                <td>Uniform Memory Access (UMA)</td>
+                <td>- Zentraler gemeinsamer Speicher
+                    - Zugriffe haben gleiche Latenz (ausser durch Caches)
+                    - Busse oder Crossbars</td>
+            </tr>
+            <tr>
+                <td>Unterschied Pipelining und Superskalarität</td>
+                <td>Pipelining: Mehrere verschiedene Stufen gleichzeitig
+                    Superskalar: Mehrere gleiche Einheiten gleichzeitig
+
+                    -> Beide erlauben Parallelität, ergänzen sich</td>
+            </tr>
+            <tr>
+                <td>Virtually Indexed Cache</td>
+                <td>Cache vor MMU, Cache arbeitet also mit virtuellen Adressen
+                    + Direkter Zugang zu Cache ohne Übersetzung
+                    + Gut für kleine Caches
+                    - Mehrere Prozesse verwenden die gleichen virtuellen Adressen -> Cache löschen bei Prozesswechsel /
+                    Tag + PID</td>
+            </tr>
+            <tr>
+                <td>VLIW</td>
+                <td>Very Long Instruction Word
+                    Mehrere Instruktionen in einem Befehl, spezielle Prozessoren
+                    + Explizite Abhängigkeiten -> Einfachere Hardware
+                    + Explizites Scheduling -> Einfachere Hardware
+                    - Komplexe, nicht kompatible ISAs
+                    - Beruht auf Fähigkeiten des Compilers</td>
+            </tr>
+            <tr>
+                <td>VLSI</td>
+                <td>Very-large-scale integration is a manufacturing technique by which many thousands of transistors are
+                    combined into a single chip.</td>
+            </tr>
+            <tr>
+                <td>Volatile</td>
+                <td>Erneut Programmierbar</td>
+            </tr>
+            <tr>
+                <td>Voll assoziativer Cache</td>
+                <td>- Jede Adresse kann auf jede Cache Zeile abgebildet werden
+                    - Nur ein "Cache Set"
+                    - Keine Index bits
+                    - Grösste Flexibilität
+                    - Grösse Komplexität</td>
+            </tr>
+            <tr>
+                <td>Vor und Nachteile GPU</td>
+                <td>+ Reduziert die Komplexität des Prozessors
+                    + Erhöht Energieeffizienz
+                    - Verrignerte Softwareflexibilität (Muss SIMD nutzen)
+                    - Zusätzlicher Programmieraufwand</td>
+            </tr>
+            <tr>
+                <td>Vorteile DRAM</td>
+                <td>- Einfacher Aufbau
+                    - Kann sehr gross und preiswert gebaut werden</td>
+            </tr>
+            <tr>
+                <td>Vorteile FPGA vs ASIC</td>
+                <td>- Rekonfigurierbar
+                    - Preis
+                    - "Time to Market"</td>
+            </tr>
+            <tr>
+                <td>Vorteile FPGA vs CPU</td>
+                <td>- Geschwindigkeit
+                    - Durchsatz
+                    - Vorhersagbarkeit</td>
+            </tr>
+            <tr>
+                <td>Vorteile OoO Execution</td>
+                <td>- Bessere Nutzung der Ressourcen
+                    - Bessere Nutzung von Parallelität
+                    - Möglichkeit mehrere gleiche Befehle anzustossen</td>
+            </tr>
+            <tr>
+                <td>Vorteile SRAM</td>
+                <td>- Behält Wert solange Strom
+                    - Sehr schnell (1 - 30 ns)
+                    - Unempfindlich</td>
+            </tr>
+            <tr>
+                <td>Vorteile und Nachteile von misaligned data</td>
+                <td>Vorteile:
+                    • Lückenlose Nutzung des Speichers bei Mischung verschiedener Datenformate
+                    • Bessere Kompatibilität zu älteren ISAs
+                    Nachteile:
+                    • Ggf. zusätzliche Speicherzugriffe notwendig
+                    • Höherer Hardware-Aufwand erforderlich</td>
+            </tr>
+            <tr>
+                <td>Yielding Locks</td>
+                <td>Falls Lock vergeben, gebe Thread ab</td>
+            </tr>
+        </table>
+    </div>
 
 
-      <footer class="footer">
+    <footer class="footer">
         <div class="container">
-          <span class="text-muted">Contribute on <a href="https://github.com/hertelukas/era" target="_blank" rel="noopener noreferrer"> <i class="fab fa-github"></i></a></span>
+            <span class="text-muted">Contribute on <a href="https://github.com/hertelukas/era" target="_blank"
+                    rel="noopener noreferrer"> <i class="fab fa-github"></i></a></span>
         </div>
-      </footer>
+    </footer>
 </body>
+
 </html>
