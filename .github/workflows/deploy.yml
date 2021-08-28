@@ -34,7 +34,7 @@ jobs:
           # ftp password
           password: ${{secrets.ftps_password}}
           # Server port to connect to (read your web hosts docs)
-          port: 22
+          port: 21
           # protocol to deploy with - ftp, ftps, or ftps-legacy
           protocol: ftps
           # Path to upload to on the server. Must end with trailing slash /
