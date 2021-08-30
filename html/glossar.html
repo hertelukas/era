@@ -135,7 +135,7 @@
             </tr>
             <tr>
                 <td>Behavioral Programming (HDL)</td>
-                <td>Ähnlich sequentieller Programme. Implementiert Automaten, auf Ebene der booleschen Gleichungen.
+                <td>Ähnlich sequentieller Programme. Beschreibt das Verhalten von Schaltungen.
                     Höchste Abstraktionsebene.</td>
                 <td>
                     <ul>
@@ -162,7 +162,7 @@
             </tr>
             <tr>
                 <td><a href="https://en.wikipedia.org/wiki/Endianness" target="_blank">Big-Endian</a></td>
-                <td>Höchste Byte wird an niedrigster Adresse gespeichert.
+                <td>Höchstes Byte wird an niedrigster Adresse gespeichert.
                     <p>
                     <h5>Beispiel</h5>
                     <b>0x01234567</b> wird folgend abgespeichert:
@@ -335,8 +335,7 @@
             <tr>
                 <td><a href="https://en.wikipedia.org/wiki/CMOS" target="_blank" rel="noopener noreferrer">CMOS</a></td>
                 <td>
-                    <p>Complementary metal-oxide semiconductor.
-                        Besteht aus NPN und PNP Transistor.</p>
+                    <p><b>Complementary metal-oxide semiconductor</b> Besteht aus NPN und PNP Transistor.</p>
 
                     <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2f/CMOS_inverter.svg/1024px-CMOS_inverter.svg.png"
                         alt="CMOS Inverter" width="200">
@@ -377,79 +376,151 @@
                 <td></td>
             </tr>
             <tr>
-                <td>Dataflow Programming (VHDL)</td>
-                <td>Boolesche Gleichungen
-
-                    +Einfacher zu beschreiben/ zu verstehen
-                    - Weniger Kontrolle</td>
+                <td>Dataflow Programming (HDL)</td>
+                <td>Boolesche Gleichungen, hierbei werden Automaten (Übergangsdiagramme) implementiert. Liegt zwischen
+                    Behavioral und Structural.
+                </td>
+                <td></td>
+                <td></td>
             </tr>
             <tr>
-                <td>Decoder</td>
-                <td>n Eingänge zu 2^n einzigartigen Ausgängen
-                    (Nur ein Ausgang auf 1)
-                    Zb 2 zu 4 Bit Decoder</td>
+                <td><a href="https://en.wikipedia.org/wiki/Binary_decoder" target="_blank"
+                        rel="noopener noreferrer">Decoder</a></td>
+                <td>
+                    <p>n Eingänge zu 2<sup>n</sup> einzigartigen Ausgängen.
+                        Nur ein Ausgang wird dabei auf 1 gesetzt.</p>
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/fc/Decoder_Example.svg/440px-Decoder_Example.svg.png"
+                        alt="Decoder_Example" width="400">
+                </td>
+                <td></td>
+                <td></td>
             </tr>
             <tr>
                 <td>Dennard Scaling</td>
-                <td>Mit kleineren Transistoren geht auch die nötige Stromleistung zurück
-                    -> Endet ca 2005, da Prozessoren nicht mehr mehr Leistung benötigen, man setzt auf mehrere Kerne
+                <td>Besagt, dass mit kleineren Transistoren auch die nötige Stromleistung zurück geht.
+                    Endete ca 2005, da Prozessoren nicht mehr mehr Leistung benötigen, man setzt auf mehrere Kerne.
                 </td>
+                <td></td>
+                <td></td>
             </tr>
             <tr>
                 <td>Direct I/O</td>
-                <td>- Spezielle Befehle im Befehlssatz
-                    - Separate Adressen für I/O Geräte
-                    - Separate Bus für I/O Operationen
-                    - Prozessor kontrolliert E/A, wartet auf Daten
-                    + schnell
-                    - verschwendet Ressourcen</td>
+                <td>
+                    <ul>
+                        <li>Spezielle Befehle im Befehlssatz</li>
+                        <li>Separate Adressen für I/O Geräte</li>
+                        <li>Separate Bus für I/O Operationen</li>
+                        <li>Prozessor kontrolliert E/A, wartet auf Daten</li>
+                    </ul>
+                </td>
+                <td>
+                    <ul>
+                        <li>Schnell</li>
+                    </ul>
+                </td>
+                <td>
+                    <ul>
+                        <li>Verschwendete Ressourcen</li>
+                    </ul>
+                </td>
             </tr>
             <tr>
                 <td>Direct Mapped Cache</td>
-                <td>Jede Adresse passt zu einer Cachezeile, index bit bestimmen die Lage der Daten im Cache.
-
-                    + Einfach zu berechnen -> schnell
-                    + Einfach zu bauen
-
-                    -Unflexibel
-                    -Häufige Verdrängung von Cachezeilen</td>
+                <td>Jede Adresse passt zu einer Cachezeile, die Index-Bits bestimmen die Lage der Daten im Cache.
+                </td>
+                <td>
+                    <ul>
+                        <li>Einfach zu berechnen, dadurch schnell</li>
+                        <li>Einfach zu bauen</li>
+                    </ul>
+                </td>
+                <td>
+                    <ul>
+                        <li>Unflexibel</li>
+                        <li>Häufige Verdrängung von Cachezeilen</li>
+                    </ul>
+                </td>
             </tr>
             <tr>
                 <td>DMA</td>
-                <td>Direct Memory Access
-                    - Prozessor beschreibt Transfer
-                    - Unabhängiger Kontroller führ ihn aus
-                    - Interrupt bei Abschluss</td>
+                <td><b>Direct Memory Access</b>
+                    <ul>
+                        <li>Prozessor beschreibt Transfer</li>
+                        <li>Unabhängiger Kontroller führt ihn aus</li>
+                        <li>Interrupt bei Abschluss</li>
+                    </ul>
+                </td>
+                <td></td>
+                <td></td>
             </tr>
             <tr>
-                <td>DRAM</td>
-                <td>Dynamic Random Access Memory
+                <td><a href="https://en.wikipedia.org/wiki/Dynamic_random-access_memory" target="_blank"
+                        rel="noopener noreferrer">DRAM</a></td>
+                <td><b>Dynamic Random Access Memory </b>
 
-                    Kondensator mit Information
-                    Auswahlleitung & Bitleitung
+                    <p>
+                        Kondensator mit Information, hat eine Auswahlleitung und eine Bitleitung. Erfordert
+                        regelmässigen DRAM Refresh.
+                    </p>
 
-                    Schreiben: Auswahlsignal setzen, 0 oder 1 an Bitleitung, Lädt oder entlädt Kondensator
-                    Lesen: Auswahlsignal setzen, Wert zwischen 0 und 1 auf Bitleitung. Wenn 0 lädt sich der Kondensator,
-                    Bitleitung geht auf 0 und andersrum</td>
+                    <ul>
+                        <li> Schreiben: Auswahlsignal setzen, 0 oder 1 an Bitleitung, lädt oder entlädt den Kondensator.
+                        </li>
+                        <li> Lesen: Auswahlsignal setzen, Wert zwischen 0 und 1 auf Bitleitung. Wenn 0 lädt sich der
+                            Kondensator, Bitleitung geht auf 0 und umgekehrt.
+                        </li>
+                    </ul>
+                </td>
+                <td>
+                    <ul>
+                        <li>Einfach aufgebaut</li>
+                        <li>Kann gross und günstig hergestellt werden</li>
+                    </ul>
+                </td>
+                <td>
+                    <ul>
+                        <li>Grosser aktiver und passiver Energiebedarf</li>
+                        <li>Langsamer Zugriff</li>
+                    </ul>
+                </td>
             </tr>
             <tr>
                 <td>Encoder</td>
-                <td>2^n Eingänge werden binär dekodiert auf n Ausgänge, so lange nur ein Eingang an ist.</td>
+                <td>
+                    <p>2<sup>n</sup> Eingänge werden binär dekodiert auf n Ausgänge, so lange nur ein Eingang an ist.
+                    </p>
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/4b/Encoder_diagram.svg/2880px-Encoder_diagram.svg.png"
+                        alt="Encoder" width="400">
+                </td>
+                <td></td>
+                <td></td>
             </tr>
             <tr>
                 <td>Ethernet</td>
                 <td>Am weitesten verbreitete Familie von Netztechnologien
-                    - Früher Shared Medium -> Quasi ein Bus
-                    - Heute Point to Point (Switched Network)</td>
+                    <ul>
+                        <li> Früher Shared Medium -> Quasi ein Bus </li>
+                        <li> Heute Point to Point (Switched Network) </li>
+                    </ul>
+                </td>
+                <td></td>
+                <td></td>
             </tr>
             <tr>
                 <td>Exceptions</td>
-                <td>• Ausgelöst von einer Operation im Programm ( von innen ) + synchron
-                    • Beispiel: nicht erlaubte Befehle (e.g. divide by zero)</td>
+                <td>
+                    <ul>
+                        <li>Ausgelöst von einer Operation im Programm (von innen)</li>
+                        <li>Synchron</li>
+                        <li>Beispiel: Nicht erlaubte Befehle (z.B. divide by zero)</li>
+                    </ul>                
+                </td>
             </tr>
             <tr>
                 <td>Exklusiver Cache</td>
-                <td>Jeder Speicherblock existiert nur einmal in der Cachehierarchie</td>
+                <td>Jeder Speicherblock existiert nur einmal in der gesamnten Cachehierarchie</td>
+                <td></td>
+                <td></td>
             </tr>
             <tr>
                 <td>FPGA</td>
@@ -857,11 +928,6 @@
                     + Erhöht Energieeffizienz
                     - Verrignerte Softwareflexibilität (Muss SIMD nutzen)
                     - Zusätzlicher Programmieraufwand</td>
-            </tr>
-            <tr>
-                <td>Vorteile DRAM</td>
-                <td>- Einfacher Aufbau
-                    - Kann sehr gross und preiswert gebaut werden</td>
             </tr>
             <tr>
                 <td>Vorteile FPGA vs ASIC</td>
