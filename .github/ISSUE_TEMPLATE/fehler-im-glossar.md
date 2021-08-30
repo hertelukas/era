@@ -1,7 +1,7 @@
 ---
 name: Fehler im Glossar
 about: Verwende dieses Template um einen Fehler, eine Ungenauigkeit oder einen Verbesserungsvorschlag
-  zu melden.
+  im Glossar zu melden.
 title: "[BEGRIFF]"
 labels: glossar
 assignees: ''
