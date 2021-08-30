@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Einführung in die Rechnerarchitektur</title>
+    <title>Glossar</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
     <link rel="stylesheet" href="../css/main.css">
@@ -39,157 +39,342 @@
     <div class="container">
         <h1>Glossar</h1>
         <table class="table table-striped">
-            <tr>
-                <th scope="col">Begriff</th>
-                <th scope="col">Definition</th>
-                <th scope="col">Vorteile</th>
-                <th scope="col">Nachteile</th>
-            </tr>
+            <thead>
+                <tr>
+                    <th scope="col">Begriff</th>
+                    <th scope="col">Definition</th>
+                    <th scope="col">Vorteile</th>
+                    <th scope="col">Nachteile</th>
+                </tr>
+            </thead>
             <tr>
                 <td>
                     "Load/Store"-Architektur</td>
-                <td>(Register-Register-Maschine)
-                    • Speicherzugriffe explizit als Maschinenbefehle
-                    • Arithmetik nur aus Registern
-                    • Registerindirekte Adressierung mit 12bit oder Register Offset
-                    • Unterstützt Prädekrement/Postinkrement</td>
+                <td>Auch Register-Register-Maschine genannt.
+                    <ul>
+                        <li>Speicherzugriffe explizit als Maschinenbefehle</li>
+                        <li>Arithmetik nur aus Registern</li>
+                        <li>Registerindirekte Adressierung mit 12bit oder Register Offset</li>
+                        <li>Unterstützt Prädekrement/Postinkrement</li>
+                    </ul>
+                </td>
+                <td></td>
+                <td></td>
             </tr>
             <tr>
-                <td>7 Eigenschaften von Neumann</td>
-                <td>1. Strukturunabhängigkeit
-                    2. 4 Werke
-                    3. Sequentiell
-                    4. Binär
-                    5. Programme & Daten in einem Speicher
-                    6. Speicher besteht aus Zeilen fester Grösse
-                    7. Sprünge möglich</td>
+                <td>Von-Neumann Architekturkonzept</td>
+                <td>
+                    <ol>
+                        <li>Strukturunabhängigkeit des Rechners</li>
+                        <li>4 Werke</li>
+                        <li>Sequentiell, Befehle nacheinander gespeichert & ausgeführt</li>
+                        <li>Binär</li>
+                        <li>Programme & Daten in einem Speicher</li>
+                        <li>Speicher besteht aus Zeilen fester Grösse</li>
+                        <li>Sprünge möglich</li>
+                    </ol>
+                </td>
+                <td></td>
+                <td></td>
             </tr>
             <tr>
                 <td>Adressierungsarten</td>
-                <td>Direkte A.
-                    Registerindirekte A.
-                    Registerindirekt mit Dekr/Inkr
-                    Registerindirekt mit Displacement
-                    Indizierte A.
-                    Indizierte A. mit Skalierungsfaktor
-                    Befehlszähler-relative A.
-                    Speicherindirekte A.</td>
+                <td>
+                    <ul>
+                        <li>Direkte A.</li>
+                        <li>Registerindirekte A.</li>
+                        <li>Registerindirekt mit Dekr/Inkr</li>
+                        <li>Registerindirekt mit Displacement</li>
+                        <li>Indizierte A.</li>
+                        <li>Indizierte A. mit Skalierungsfaktor</li>
+                        <li>Befehlszähler-relative A.</li>
+                        <li>Speicherindirekte A.</li>
+                    </ul>
+                </td>
+                <td></td>
+                <td></td>
             </tr>
             <tr>
-                <td>ASIC</td>
-                <td>Application Specific Integrated Circuit</td>
-            </tr>
-            <tr>
-                <td>Befehlsformate</td>
-                <td>• Einheitliches Befehlsformat (RISC)
-                    + einfach zu dekodieren
-                    • Variables Befehlsformat (CISC)
-                    + etrem flexibel</td>
+                <td><a href="https://en.wikipedia.org/wiki/Application-specific_integrated_circuit"
+                        target="_blank">ASIC</a></td>
+                <td><b>Application Specific Integrated Circuit</b> Eine spezialisierte VLSI für einen bestimmten Zweck
+                </td>
+                <td>
+                    <ul>
+                        <li>Schneller</li>
+                        <li>Energieeffizienter</li>
+                        <li>Kleiner</li>
+                        <li>Strahlungsresistent</li>
+                        <li>...</li>
+                    </ul>
+                </td>
+                <td>
+                    <ul>
+                        <li>Aufwendige Entwicklung</li>
+                        <li>Teuere Entwicklung</li>
+                        <li>Nicht vielseitig einsetzbar</li>
+                    </ul>
+                </td>
             </tr>
             <tr>
                 <td>Befehlszyklus</td>
-                <td>1. Befehl holen
-                    2. Dekodieren
-                    3. Adresse evaluieren
-                    4. Operand -> Rechnwerk
-                    5. Befehl ausführen
-                    6. In Accumulator/Register
-                    7. BZ erhöhen</td>
+                <td>
+                    <ol>
+                        <li>Befehl holen</li>
+                        <li>Befehl holen</li>
+                        <li>Dekodieren</li>
+                        <li>Adresse evaluieren</li>
+                        <li>Operand -> Rechnwerk</li>
+                        <li>Befehl ausführen</li>
+                        <li>In Accumulator/Register</li>
+                        <li>BZ erhöhen</li>
+                    </ol>
+                </td>
+                <td></td>
+                <td></td>
             </tr>
             <tr>
-                <td>Behavioral Programming (VHDL)</td>
-                <td>Ähnlich sequentieller Programme
-
-                    Implementiert Automaten, auf Ebene der booleschen Gleichungen</td>
+                <td>Behavioral Programming (HDL)</td>
+                <td>Ähnlich sequentieller Programme. Implementiert Automaten, auf Ebene der booleschen Gleichungen.
+                    Höchste Abstraktionsebene.</td>
+                <td>
+                    <ul>
+                        <li>Einfach zu beschreiben/verstehen</li>
+                    </ul>
+                </td>
+                <td>
+                    <ul>
+                        <li>Weniger Kontrolle</li>
+                    </ul>
+                </td>
             </tr>
             <tr>
                 <td>Benutzermodus</td>
-                <td>• Eingeschränkter Zugriff
-                    • Keine privilegierten Befehle wie z.B. Ein-/Ausgabe
-                    • Kein Zugriff auf Konfigurationsregister</td>
+                <td>
+                    <ul>
+                        <li>Eingeschränkter Zugriff</li>
+                        <li>Keine privilegierten Befehle wie z.B. Ein-/Ausgabe</li>
+                        <li>Kein Zugriff auf Konfigurationsregister</li>
+                    </ul>
+                </td>
+                <td></td>
+                <td></td>
             </tr>
             <tr>
-                <td>Big-Endians and Little-Endians</td>
-                <td>Intel -> Little Endian (Höchster Wert an niedrigster Adresse -> Endet mit dem kleinsten Wert)</td>
+                <td><a href="https://en.wikipedia.org/wiki/Endianness" target="_blank">Big-Endian</a></td>
+                <td>Höchste Byte wird an niedrigster Adresse gespeichert.
+                    <p>
+                    <h5>Beispiel</h5>
+                    <b>0x01234567</b> wird folgend abgespeichert:
+                    <table class="table table-sm table-striped">
+                        <thead>
+                            <tr>
+                                <th scope="col">Adresse</th>
+                                <th scope="col">Wert</th>
+                            </tr>
+                        </thead>
+                        <tr>
+                            <td>n+3</td>
+                            <td>67</td>
+                        </tr>
+                        <tr>
+                            <td>n+2</td>
+                            <td>45</td>
+                        </tr>
+                        <tr>
+                            <td>n+1</td>
+                            <td>23</td>
+                        </tr>
+                        <tr>
+                            <td>n</td>
+                            <td>01</td>
+                        </tr>
+                    </table>
+                    </p>
+                </td>
+                <td></td>
+                <td></td>
             </tr>
             <tr>
-                <td>Block Devices</td>
-                <td>- Abstraktion im BS: Blöcke von Daten
-                    - Benutzer kann auf einzelne Daten zugriefen
-                    - Üblicherweise mit Dateisystem verbunden
-                    - z.B. Festplattenspeicher</td>
+                <td><a href="https://en.wikipedia.org/wiki/Endianness" target="_blank">Little-Endian</a></td>
+                <td>Höchstes Byte steht an höchster Adresse. Wird von Intel verwendet und wird deutlich häufiger
+                    verwendet.
+                    <p>
+                    <h5>Beispiel</h5>
+                    <b>0x01234567</b> wird folgend abgespeichert:
+                    <table class="table table-sm table-striped">
+                        <thead>
+                            <tr>
+                                <th scope="col">Adresse</th>
+                                <th scope="col">Wert</th>
+                            </tr>
+                        </thead>
+                        <tr>
+                            <td>n+3</td>
+                            <td>01</td>
+                        </tr>
+                        <tr>
+                            <td>n+2</td>
+                            <td>23</td>
+                        </tr>
+                        <tr>
+                            <td>n+1</td>
+                            <td>45</td>
+                        </tr>
+                        <tr>
+                            <td>n</td>
+                            <td>67</td>
+                        </tr>
+                    </table>
+                    </p>
+                </td>
+                <td></td>
+                <td></td>
             </tr>
             <tr>
-                <td>Branch Prediction</td>
+                <td><a href="https://en.wikipedia.org/wiki/Device_file#Block_devices" target="_blank"
+                        rel="noopener noreferrer">Block Devices</a></td>
+                <td>
+                    <ul>
+                        <li>Abstraktion im BS: Blöcke von Daten</li>
+                        <li>Benutzer kann auf einzelne Daten zugriefen</li>
+                        <li>Üblicherweise mit Dateisystem verbunden</li>
+                        <li>z.B. Festplattenspeicher</li>
+                    </ul>
+                </td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td><a href="https://en.wikipedia.org/wiki/Branch_predictor" target="_blank"
+                        rel="noopener noreferrer">Branch Prediction</a></td>
                 <td>Vorhersage, ob Sprung genommen wird
-                    Bei inkorrekter Vorhersage muss Pipeline neu aufgesetzt werden -> teuer</td>
+                    Bei inkorrekter Vorhersage muss Pipeline neu aufgesetzt werden -> teuer
+                </td>
+                <td></td>
+                <td></td>
             </tr>
             <tr>
                 <td>Cache Directory Protokolle</td>
                 <td>Zentrales Verzeichnis, welches übersicht von Kopien in Caches hat. Heutiger Standard, kein Snooping
-                    mehr</td>
+                    mehr.</td>
+                <td></td>
+                <td></td>
             </tr>
             <tr>
                 <td>Cache Index Bits</td>
                 <td>Bestimmt die Cachezeile, in der Adresse sein kann.
                     32 Byte pro Cachezeile, Cache Grösse 32 KiB -> 1024 Cachezeilen -> 10 bit Index
 
-                    Bei Cache Sets, wird das Set beschrieben</td>
+                    Bei Cache Sets, wird das Set beschrieben
+                </td>
+                <td></td>
+                <td></td>
             </tr>
             <tr>
                 <td>Cache Offset Bits</td>
                 <td>Unterste Bits, bestimmen byte(?) index in einer Zeile.
-                    32 Byte pro Cachezeile -> 5bit</td>
+                    32 Byte pro Cachezeile -> 5bit
+                </td>
+                <td></td>
+                <td></td>
             </tr>
             <tr>
-                <td>Cache Snooping</td>
+                <td><a href="https://en.wikipedia.org/wiki/Bus_snooping" target="_blank" rel="noopener noreferrer">Cache
+                        Snooping</a></td>
                 <td>Gemeinsamer Bus zwischen Caches, alle Teilnehmer hören mit.
-                    -> Teilnehmer passen laufend Cache-Inhalt an
-                    -> MSI oder MESI Automat
-                    + Einfach zu implementieren
-                    - Busse skalieren schlecht</td>
+                    <ul>
+                        <li>Teilnehmer passen laufend Cache-Inhalt an</li>
+                        <li>MSI oder MESI Automat</li>
+                    </ul>
+                </td>
+                <td>
+                    <ul>
+                        <li>Einfach zu implementieren</li>
+                    </ul>
+                </td>
+                <td>
+                    <ul>
+                        <li>Busse skalieren schlecht</li>
+                    </ul>
+                </td>
             </tr>
             <tr>
                 <td>Cache Tag Bit</td>
                 <td>Oberste Bits, beschreiben welche Daten in Cachezeile sind</td>
+                <td></td>
+                <td></td>
             </tr>
             <tr>
                 <td>Capacity Cache Misses</td>
-                <td>Der Speicherblock wäre auch verdrängt worden, wenn der Cache vollassoziativ wäre</td>
+                <td>Der Speicherblock wäre auch verdrängt worden, wenn der Cache vollassoziativ wäre.</td>
+                <td></td>
+                <td></td>
             </tr>
             <tr>
-                <td>CISC: abbreviation und vor/nachteile</td>
-                <td>CISC: Complex Instruction Set Computer
-                    Vorteil:
-                    • einfache Programmierbarkeit, geringer Speicherbedarf
-                    • Realisiert durch Mikroprogramme
-                    Nachteile:
-                    • komplexe (langsame) Implementierung insbesondere Dekodierung, evtl. viele Funktionen ungenutzt
+                <td><a href="https://en.wikipedia.org/wiki/Complex_instruction_set_computer" target="_blank">CISC</a>
+                </td>
+                <td><b>Complex Instruction Set Computer</b> Befehlssatz mit vielen Instruktionen, steht im Gegensatz zu
+                    RISC.
+                    Wird durch Mikroprogramme
+                    realisiert.</td>
+                <td>
+                    <ul>
+                        <li>Einfach Programmierbar</li>
+                        <li>Geringer Speicherbedarf</li>
+                    </ul>
+                </td>
+                <td>
+                    <ul>
+                        <li>Komplexe & langsame Implementierung</li>
+                        <li>Komplexe & langsame Dekodierung</li>
+                        <li>u.U ungenutzte Instruktionen</li>
+                    </ul>
                 </td>
             </tr>
             <tr>
-                <td>CMOS</td>
-                <td>complementary metal-oxide semiconductor.
-                    Besteht aus NPN und PNP Transistor
+                <td><a href="https://en.wikipedia.org/wiki/CMOS" target="_blank" rel="noopener noreferrer">CMOS</a></td>
+                <td>
+                    <p>Complementary metal-oxide semiconductor.
+                        Besteht aus NPN und PNP Transistor.</p>
 
-                    Vorteile
-                    - 0 und 1 geschaltet
-                    - weniger Verlustleistung
-                    - weniger Hitzeentwicklung
-                    - weniger Störanfällig</td>
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2f/CMOS_inverter.svg/1024px-CMOS_inverter.svg.png"
+                        alt="CMOS Inverter" width="200">
+                </td>
+                <td>
+                    <ul>
+                        <li>0 und 1 geschaltet</li>
+                        <li>weniger Verlustleistung</li>
+                        <li>weniger Hitzeentwicklung</li>
+                        <li>weniger Störanfällig</li>
+                    </ul>
+                </td>
+                <td></td>
             </tr>
             <tr>
-                <td>Cold Cache Misses</td>
-                <td>Erster Zugriff auf eine Adresse im Cache, nicht zu vermeiden</td>
+                <td>Compulsory (cold) Cache Misses</td>
+                <td>Erster Zugriff auf eine Adresse, nicht zu vermeiden</td>
+                <td></td>
+                <td></td>
             </tr>
             <tr>
                 <td>Conflict Cache Misses</td>
-                <td>Speicherblock wurde verdrängt, da ein andere Block auf das gleiche Cache Set abgebildet wurde</td>
+                <td>Speicherblock wurde verdrängt, da ein andere Block auf das gleiche Cache Set abgebildet wurde.</td>
+                <td>
+                    <ul>
+                        <li>Unter Umständen vermeidbar</li>
+                    </ul>
+                </td>
+                <td></td>
             </tr>
             <tr>
-                <td>CPLD</td>
-                <td>A complex programmable logic device that consists basically of multiple SPLD arrays with
-                    programmable interconnections.</td>
+                <td><a href="https://en.wikipedia.org/wiki/Complex_programmable_logic_device" target="_blank"
+                        rel="noopener noreferrer">CPLD</a></td>
+                <td><b>Complex programmable logic device</b> Ein CPLD besteht aus mehreren SPLD Arrays welche
+                    programmierbar miteinander verbunden sind.
+                </td>
+                <td></td>
+                <td></td>
             </tr>
             <tr>
                 <td>Dataflow Programming (VHDL)</td>
@@ -509,13 +694,23 @@
                     EEPROM -> Electrcially EPROM</td>
             </tr>
             <tr>
-                <td>RISC: abbreviation und vor/nachteile</td>
-                <td>RISC: Reduced Instruction Set Computer
-                    Vorteil:
-                    • einfache, effiziente, schnelle Implementierung
-                    • Realisiert durch feste Verdrahtung
-                    Nachteil:
-                    • schwierigere Programmierbarkeit - Aber: das erledigt der Compiler</td>
+                <td><a href="https://en.wikipedia.org/wiki/Reduced_instruction_set_computer" target="_blank">RISC</a>
+                </td>
+                <td>Reduced Instruction Set Computer. Hoch optimierter, minimalistischer Befehlssatz mit nur wenig
+                    unterschiedlichen Instruktionen. Steht
+                    im Gegensatz zu CISC. Wird durch feste Vertratungen realisiert.</td>
+                <td>
+                    <ul>
+                        <li>Einfache Implementierung</li>
+                        <li>Effizeinte Implementierung</li>
+                        <li>Schnelle Implementierung</li>
+                    </ul>
+                </td>
+                <td>
+                    <ul>
+                        <li>Schwierigere Programmierbarkeit (Wird aber durch Compiler abstrahiert)</li>
+                    </ul>
+                </td>
             </tr>
             <tr>
                 <td>ROM</td>
