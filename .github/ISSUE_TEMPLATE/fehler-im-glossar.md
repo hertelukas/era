@@ -9,7 +9,7 @@ assignees: ''
 ---
 
 **Begriff**
-Begriff, der verbessern werden sollte, z.B. ASIC.
+Begriff, der verbessert werden sollte, z.B. ASIC.
 
 **Verbesserungsvorschlag**
 Eine möglichst genaue Beschreibung des Verbesserungsvorschlags.
