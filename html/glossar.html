@@ -40,8 +40,9 @@
         <h1>Glossar</h1>
         <p>Bei diesem Glossar handelt es sich um eine Erweiterung meiner Notizen zur Klausurvorbereitung. Es ist sehr
             wahrscheinlich, dass verschiedenste Fehler/Ungenauigkeiten in den Definitionen vorkommen. Diese kann man
-            gerne als Issue <a href="https://github.com/hertelukas/era/issues/new?assignees=&labels=glossar&template=fehler-im-glossar.md&title=%5BBEGRIFF%5D" target="_blank"
-                rel="noopener noreferrer">hier</a> melden, oder man erstellt einen neuen Pull-Request.
+            gerne als Issue <a
+                href="https://github.com/hertelukas/era/issues/new?assignees=&labels=glossar&template=fehler-im-glossar.md&title=%5BBEGRIFF%5D"
+                target="_blank" rel="noopener noreferrer">hier</a> melden, oder man erstellt einen neuen Pull-Request.
         </p>
         <table class="table table-striped">
             <thead>
@@ -490,7 +491,8 @@
                 </td>
             </tr>
             <tr>
-                <td>Encoder</td>
+                <td><a href="https://en.wikipedia.org/wiki/Encoder_(digital)" target="_blank"
+                        rel="noopener noreferrer">Encoder</a></td>
                 <td>
                     <p>2<sup>n</sup> Eingänge werden binär dekodiert auf n Ausgänge, so lange nur ein Eingang an ist.
                     </p>
@@ -501,7 +503,8 @@
                 <td></td>
             </tr>
             <tr>
-                <td>Ethernet</td>
+                <td><a href="https://en.wikipedia.org/wiki/Ethernet" target="_blank"
+                        rel="noopener noreferrer">Ethernet</a></td>
                 <td>Am weitesten verbreitete Familie von Netztechnologien
                     <ul>
                         <li> Früher Shared Medium -> Quasi ein Bus </li>
@@ -520,151 +523,235 @@
                         <li>Beispiel: Nicht erlaubte Befehle (z.B. divide by zero)</li>
                     </ul>
                 </td>
+                <td></td>
+                <td></td>
             </tr>
             <tr>
                 <td>Exklusiver Cache</td>
-                <td>Jeder Speicherblock existiert nur einmal in der gesamnten Cachehierarchie</td>
+                <td>Jeder Speicherblock existiert nur einmal in der gesamnten Cachehierarchie. Häufig bei AMD verwendet.
+                </td>
                 <td></td>
                 <td></td>
             </tr>
             <tr>
-                <td>FPGA</td>
-                <td>Field Programmable Gate Array
-
-                    - Emulation von beliebigen Schaltungen
-                    - Einfacher als CPLDs</td>
+                <td><a href="https://en.wikipedia.org/wiki/Field-programmable_gate_array" target="_blank"
+                        rel="noopener noreferrer">FPGA</a></td>
+                <td><b>Field Programmable Gate Array</b>
+                    <ul>
+                        <li>Emulation von beliebigen Schaltungen</li>
+                        <li>Einfacher als CPLDs</li>
+                    </ul>
+                </td>
+                <td></td>
+                <td></td>
             </tr>
             <tr>
                 <td>Gründe für Moduswechsel</td>
-                <td>• durch speziellen Befehl
-                    • durch Interrupts/Exceptions</td>
+                <td>
+                    <ul>
+                        <li>durch speziellen Befehl </li>
+                        <li>durch Interrupts/Exceptions</li>
+                    </ul>
+                </td>
+                <td></td>
+                <td></td>
             </tr>
             <tr>
                 <td>Hardware Prefetching</td>
                 <td>Hardware untersucht Zugriffsadressen -> Erkennt Muster -> Liest zukünftige Daten.
-                    zb. Prefetch Folgezeile oder Strided Prefetcher</td>
+                    Beispiel: Prefetch Folgezeile oder Strided Prefetcher</td>
+                <td></td>
+                <td></td>
             </tr>
             <tr>
                 <td>Hardware Thread</td>
-                <td>- Ausführungseinheit in Hardware mit BZ
-                    - Getrennte Registersätze
-                    - Führt eine Programmsequenz aus
-                    Oft auch Kern genannt</td>
+                <td>
+                    <ul>
+                        <li>Ausführungseinheit in Hardware mit BZ</li>
+                        <li>Getrennte Registersätze</li>
+                        <li>Führt eine Programmsequenz aus</li>
+                    </ul>
+
+                    Wird oft auch Kern genannt
+                </td>
+                <td></td>
+                <td></td>
             </tr>
             <tr>
-                <td>HDL</td>
-                <td>Hardware Description Language
-
-                    Beschreibung einzelner Komponenten für Entwicklung von FPGAs</td>
+                <td><a href="https://en.wikipedia.org/wiki/Hardware_description_language" target="_blank"
+                        rel="noopener noreferrer">HDL</a></td>
+                <td><b>Hardware Description Language</b> Beschreibung einzelner Komponenten für die Entwicklung von
+                    FPGAs
+                </td>
+                <td></td>
+                <td></td>
             </tr>
             <tr>
                 <td>Inklusiver Cache</td>
-                <td>Alle Speicherblöcke sind auch in dem nächst grösseren Cache enthalten</td>
+                <td>Alle Speicherblöcke sind auch in dem nächst grösseren Cache enthalten. Häufig bei Intel verwendet.
+                </td>
+                <td></td>
+                <td></td>
             </tr>
             <tr>
                 <td>Interrupt-driven I/O</td>
-                <td>Prozessor löst Zugriff aus, E/A arbeitet alleine, Signalisiert abschluss durch Interrupt</td>
+                <td>Prozessor löst Zugriff aus, E/A arbeitet alleine, Abschluss wird durch Interrupt signalisiert. Steht
+                    im Gegensatz zu Direct I/O</td>
+                <td></td>
+                <td></td>
             </tr>
             <tr>
                 <td>Interrupts</td>
-                <td>• Erlauben dem Prozessor auf externe( Tastaur z.B.), asynchrone Ereignisse zu reagieren
-                    • kann ignoriert werden</td>
+                <td>
+                    <ul>
+                        <li>Erlauben dem Prozessor auf externe( Tastaur z.B.), asynchrone Ereignisse zu reagieren</li>
+                        <li>Können ignoriert werden</li>
+                    </ul>
+                </td>
+                <td></td>
+                <td></td>
             </tr>
             <tr>
-                <td>LUT</td>
-                <td>Lookup Table
+                <td><a href="https://en.wikipedia.org/wiki/Lookup_table" target="_blank" rel="noopener noreferrer">LUT</a></td>
+                <td><b>Lookup Table</b>
                     Zentrales Element eines Logikblocks in einem FPGA.
-                    - 3-6bit Eingang
-                    - 1 bit Ausgang
-                    - Beliebige Schaltung
-                    - Optional mit Flipflop
-                    zb als SRAM realisiert</td>
+                    <ul>
+                        <li>3-6bit Eingang</li>
+                        <li>1 bit Ausgang</li>
+                        <li>Beliebige Schaltung</li>
+                        <li>Optional mit Flipflop</li>
+                    </ul>
+
+                    Kann z.B. als SRAM realisiert werden.
+                </td>
+                <td></td>
+                <td></td>
             </tr>
             <tr>
-                <td>Mealy Automat</td>
+                <td><a href="https://en.wikipedia.org/wiki/Mealy_machine" target="_blank" rel="noopener noreferrer">Mealy Automat</a></td>
                 <td>Ein deterministischer endlicher Automat, dessen Ausgabe von seinem Zustand und seiner Eingabe
                     abhängt.</td>
+                <td></td>
+                <td></td>
             </tr>
             <tr>
                 <td>Mehrkern Architektur</td>
                 <td>Mehrere HW Threads in einem System
-                    - getrennte Kerne
-                    - Replikation Leit & Rechenwerk
-                    - Gemeinsamer Speicher
-                    - Meist gemeinsames E/A Werk
-                    - Voller Speed-Up (Gegensatz zu SMT)</td>
+                    <ul>
+                        <li>getrennte Kerne</li>
+                        <li>Replikation Leit & Rechenwerk</li>
+                        <li>Gemeinsamer Speicher</li>
+                        <li>Meist gemeinsames E/A Werk</li>
+                        <li>Voller Speed-Up (Gegensatz zu SMT)</li>
+                    </ul>
+                </td>
+                <td></td>
+                <td></td>
             </tr>
             <tr>
                 <td>Memory Mapped I/O</td>
-                <td>- Ansprechen der Geräte über Speicherbereiche
-                    - Speicher Teil des normalen Speicherbereichs
-                    - Kontrolliert duch virtuelle Speicherverwaltung
-                    - Heutiger Standard</td>
+                <td>
+                    <ul>
+                        <li>Ansprechen der Geräte über Speicherbereiche</li>
+                        <li>Speicher Teil des normalen Speicherbereichs</li>
+                        <li>Kontrolliert duch virtuelle Speicherverwaltung</li>
+                        <li>Heutiger Standard</li>
+                    </ul>
+                </td>
+                <td></td>
+                <td></td>
             </tr>
             <tr>
                 <td>Memory Mountain</td>
-                <td>Umso grösser der Speicher -> Umso langsamer
-                    Umso grösser die Strides -> Umso langsamer</td>
+                <td>
+                    <ul>
+                        <li>Umso grösser der Speicher -> Umso langsamer</li>
+                        <li>Umso grösser die Strides -> Umso langsamer</li>
+                    </ul>
+                </td>
+                <td></td>
+                <td></td>
             </tr>
             <tr>
                 <td>Mengenassoziativer Cache</td>
-                <td>- Jede Adresse kann auf einen Teil der Cache Zeilen abgebildet werden
-                    - Mehrere Cache-Sets / Reduzierte Zahl von Index bits
-                    Beispiel: 4-way associative = 4 Zeilen pro Cacheset</td>
+                <td>
+                    <ul>
+                        <li>Jede Adresse kann auf einen Teil der Cache Zeilen abgebildet werden</li>
+                        <li>Mehrere Cache-Sets / Reduzierte Zahl von Index bits</li>
+                    </ul>
+                    Beispiel: 4-way associative = 4 Zeilen pro Cacheset
+                </td>
+                <td></td>
+                <td></td>
             </tr>
             <tr>
-                <td>MESI Protokoll</td>
-                <td>MSI, aber mit Exclusive Zustand
-
+                <td><a href="https://en.wikipedia.org/wiki/MESI_protocol" target="_blank" rel="noopener noreferrer">MESI Protokoll</a></td>
+                <td>MSI, aber mit Exclusive Zustand. <br>
                     Exclusive: Wert in einem Cache, unverändert</td>
+                <td></td>
+                <td></td>
             </tr>
             <tr>
                 <td>MIMD</td>
-                <td>Multiple Instruction Multiple Data
-                    n Rechenwerke, n Leitwerke
+                <td><b>Multiple Instruction Multiple Data</b>
+                    n Rechenwerke, n Leitwerke <br>
                     -> Parallele Systeme
-                    - Mehrere HW Threads, prinzipiell unkoordiniert, keine direkten abhängigkeiten, parallele Ausführung
-                    - Gemeinsamer Speicher, sonst getrennte Maschinen</td>
+                    <ul>
+                        <li>Mehrere HW Threads, prinzipiell unkoordiniert, keine direkten abhängigkeiten, parallele
+                            Ausführung</li>
+                        <li>Gemeinsamer Speicher, sonst getrennte Maschinen</li>
+                    </ul>
+                </td>
+                <td></td>
+                <td></td>
             </tr>
             <tr>
-                <td>MMU</td>
-                <td>memory management unit, dedicated hardware on the CPU that translates virtual addresses on the fly
-                    using a lookup table stored in main memory</td>
+                <td><a href="https://en.wikipedia.org/wiki/Memory_management_unit" target="_blank" rel="noopener noreferrer">MMU</a></td>
+                <td><b>Memory management unit</b>
+                    Separate Hardware auf der CPU, welche virtuelle Adressen via LUT in Physikalische übersetzt.</td>
             </tr>
             <tr>
-                <td>Moore Automat</td>
+                <td><a href="https://en.wikipedia.org/wiki/Moore_machine" target="_blank" rel="noopener noreferrer">Moore Automat</a></td>
                 <td>Ein endlicher Automat, dessen Ausgabe ausschließlich von seinem Zustand abhängt.</td>
+                <td></td>
+                <td></td>
             </tr>
             <tr>
-                <td>MSI Protokoll</td>
-                <td>Jede Cachezeile muss ihren Status mitverfolgen
-
-                    - Modified: Cachezeile lokal geändert, Speicher nicht koheränt
-                    - Shared: Wert in mindestens einem Cache, kohärent
-                    - Invalid: Cacheblock nicht gültig oder veraltet</td>
+                <td><a href="https://en.wikipedia.org/wiki/MSI_protocol" target="_blank" rel="noopener noreferrer">MSI Protokoll</a></td>
+                <td>Jede Cachezeile muss ihren Status mitverfolgen.
+                    <ul>
+                        <li>Modified: Cachezeile lokal geändert, Speicher nicht koheränt</li>
+                        <li>Shared: Wert in mindestens einem Cache, kohärent</li>
+                        <li>Invalid: Cacheblock nicht gültig oder veraltet</li>
+                    </ul>
+                </td>
+                <td></td>
+                <td></td>
             </tr>
             <tr>
-                <td>Multiplexer</td>
+                <td><a href="https://en.wikipedia.org/wiki/Multiplexer" target="_blank"
+                        rel="noopener noreferrer">Multiplexer</a></td>
                 <td>Wid genutzt um Daten auszuwählen. Es wird anhand eines Selector- Eingangs ein Eingang ausgewählt und
-                    dieser weitergeleitet zum Ausgang.</td>
+                    dieser weitergeleitet zum Ausgang.
+                    <br>
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/16/Multiplexer2.svg/2880px-Multiplexer2.svg.png"
+                        alt="Multiplexer" width="400">
+                </td>
+                <td></td>
+                <td></td>
             </tr>
             <tr>
                 <td>Multithreading</td>
-                <td>Mehrere HW Threads in einem Prozessorkern
-                    - Einzelner BZ und Register
-                    - Ressourcen geteilt
-                    - Umschalten nach x Takten
-                    - Meist Fork/Join (Master startet einen neuen Thread) (siehe Java Threads)</td>
-            </tr>
-            <tr>
-                <td>Nachteile DRAM</td>
-                <td>- Grosser Energiebedarf wenn aktiv & passiv
-                    - Langsamer Zugriff</td>
-            </tr>
-            <tr>
-                <td>Nachteile SRAM</td>
-                <td>- Relativ gross & teuer
-                    - Grosser Energiebedarf wenn aktiv</td>
+                <td>Mehrere HW Threads in einem Prozessorkern.
+                    <ul>
+                        <li>Einzelner BZ und Register</li>
+                        <li>Ressourcen geteilt</li>
+                        <li>Umschalten nach x Takten</li>
+                        <li>Meist Fork/Join (Master startet einen neuen Thread) (siehe Java Threads)</li>
+                    </ul>
+                </td>
+                <td></td>
+                <td></td>
             </tr>
             <tr>
                 <td>NAND und NOR Flash</td>
@@ -839,6 +926,13 @@
                     Schreiben: Bit auf 1, Nicht Bit auf 0, Select auf 1, Inverter pegeln sich ein
                     Lesen: Bit auf 1, Nicht Bit auf 1, Inverter ziehen somit einen Ausgang auf 0, Spannungsabfall wird
                     gemessen</td>
+                <td></td>
+                <td>
+                    <ul>
+                        <li>Relativ gross & teuer</li>
+                        <li>Grosser Energiebedarf wenn aktiv</li>
+                    </ul>
+                </td>
             </tr>
             <tr>
                 <td>Stream Devices</td>
