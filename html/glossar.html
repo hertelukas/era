@@ -54,36 +54,6 @@
                 </tr>
             </thead>
             <tr>
-                <td>
-                    "Load/Store"-Architektur</td>
-                <td>Auch Register-Register-Maschine genannt.
-                    <ul>
-                        <li>Speicherzugriffe explizit als Maschinenbefehle</li>
-                        <li>Arithmetik nur aus Registern</li>
-                        <li>Registerindirekte Adressierung mit 12bit oder Register Offset</li>
-                        <li>Unterstützt Prädekrement/Postinkrement</li>
-                    </ul>
-                </td>
-                <td></td>
-                <td></td>
-            </tr>
-            <tr>
-                <td>Von-Neumann Architekturkonzept</td>
-                <td>
-                    <ol>
-                        <li>Strukturunabhängigkeit des Rechners</li>
-                        <li>4 Werke</li>
-                        <li>Sequentiell, Befehle nacheinander gespeichert & ausgeführt</li>
-                        <li>Binär</li>
-                        <li>Programme & Daten in einem Speicher</li>
-                        <li>Speicher besteht aus Zeilen fester Grösse</li>
-                        <li>Sprünge möglich</li>
-                    </ol>
-                </td>
-                <td></td>
-                <td></td>
-            </tr>
-            <tr>
                 <td>Adressierungsarten</td>
                 <td>
                     <ul>
@@ -194,42 +164,6 @@
                         <tr>
                             <td>n</td>
                             <td>01</td>
-                        </tr>
-                    </table>
-                    </p>
-                </td>
-                <td></td>
-                <td></td>
-            </tr>
-            <tr>
-                <td><a href="https://en.wikipedia.org/wiki/Endianness" target="_blank">Little-Endian</a></td>
-                <td>Höchstes Byte steht an höchster Adresse. Wird von Intel verwendet und wird deutlich häufiger
-                    verwendet.
-                    <p>
-                    <h5>Beispiel</h5>
-                    <b>0x01234567</b> wird folgend abgespeichert:
-                    <table class="table table-sm table-striped">
-                        <thead>
-                            <tr>
-                                <th scope="col">Adresse</th>
-                                <th scope="col">Wert</th>
-                            </tr>
-                        </thead>
-                        <tr>
-                            <td>n+3</td>
-                            <td>01</td>
-                        </tr>
-                        <tr>
-                            <td>n+2</td>
-                            <td>23</td>
-                        </tr>
-                        <tr>
-                            <td>n+1</td>
-                            <td>45</td>
-                        </tr>
-                        <tr>
-                            <td>n</td>
-                            <td>67</td>
                         </tr>
                     </table>
                     </p>
@@ -647,6 +581,56 @@
                 <td></td>
             </tr>
             <tr>
+                <td><a href="https://en.wikipedia.org/wiki/Endianness" target="_blank">Little-Endian</a></td>
+                <td>Höchstes Byte steht an höchster Adresse. Wird von Intel verwendet und wird deutlich häufiger
+                    verwendet.
+                    <p>
+                    <h5>Beispiel</h5>
+                    <b>0x01234567</b> wird folgend abgespeichert:
+                    <table class="table table-sm table-striped">
+                        <thead>
+                            <tr>
+                                <th scope="col">Adresse</th>
+                                <th scope="col">Wert</th>
+                            </tr>
+                        </thead>
+                        <tr>
+                            <td>n+3</td>
+                            <td>01</td>
+                        </tr>
+                        <tr>
+                            <td>n+2</td>
+                            <td>23</td>
+                        </tr>
+                        <tr>
+                            <td>n+1</td>
+                            <td>45</td>
+                        </tr>
+                        <tr>
+                            <td>n</td>
+                            <td>67</td>
+                        </tr>
+                    </table>
+                    </p>
+                </td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>
+                    Load/Store-Architektur</td>
+                <td>Auch Register-Register-Maschine genannt.
+                    <ul>
+                        <li>Speicherzugriffe explizit als Maschinenbefehle</li>
+                        <li>Arithmetik nur aus Registern</li>
+                        <li>Registerindirekte Adressierung mit 12bit oder Register Offset</li>
+                        <li>Unterstützt Prädekrement/Postinkrement</li>
+                    </ul>
+                </td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
                 <td><a href="https://en.wikipedia.org/wiki/Lookup_table" target="_blank"
                         rel="noopener noreferrer">LUT</a></td>
                 <td><b>Lookup Table</b>
@@ -744,6 +728,27 @@
                 <td></td>
             </tr>
             <tr>
+                <td>Misaligned Data</td>
+                <td>
+                    Ein Speicherzugriff ist aligned wenn die Daten, auf welche zugegriffen wird, n Bytes lang sind und
+                    das einzelne Datum an einer Adresse liegt welche durch n teilbar ist. Bytes sind somit immer
+                    aligned.
+                    Ist die Eigenschaft nicht erfüllt, sind die Daten misaligned.
+                </td>
+                <td>
+                    <ul>
+                        <li>Lückenlose Nutzung des Speichers bei Mischung verschiedener Datenformate</li>
+                        <li>Bessere Kompatibilität zu älteren ISAs</li>
+                    </ul>
+                </td>
+                <td>
+                    <ul>
+                        <li>Ggf. zusätzliche Speicherzugriffe notwendig</li>
+                        <li>Höherer Hardware-Aufwand erforderlich</li>
+                    </ul>
+                </td>
+            </tr>
+            <tr>
                 <td><a href="https://en.wikipedia.org/wiki/Memory_management_unit" target="_blank"
                         rel="noopener noreferrer">MMU</a></td>
                 <td><b>Memory management unit</b>
@@ -779,7 +784,8 @@
                         <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/16/Multiplexer2.svg/2880px-Multiplexer2.svg.png"
                             class="card-img-top" alt="Multiplexer">
                         <div class="card-body">
-                            <p class="card-text">2-zu-1 Multiplexer. Entspricht einem kontrollierten Switch.<br><small class="text-muted"><a
+                            <p class="card-text">2-zu-1 Multiplexer. Entspricht einem kontrollierten Switch.<br><small
+                                    class="text-muted"><a
                                         href="https://commons.wikimedia.org/wiki/File:Multiplexer2.svg">CaesarIII</a>,
                                     <a href="https://creativecommons.org/licenses/by-sa/3.0">CC BY-SA 3.0</a>, via
                                     Wikimedia Commons</small></p>
@@ -803,107 +809,192 @@
                 <td></td>
             </tr>
             <tr>
-                <td>NAND und NOR Flash</td>
-                <td>NAND
-                    - schneller, kleiner
-                    - Gut für Speicher
-                    - Zugriff nur über Blöcke
-                    - NAND SSDs für kleine Zugriffe mit NOR Seitentabellen realisiert
-                    - Begrenzte Anzahl Löschvorgänge
-                    NOR
-                    - Zuverlässiger, Einzelzugriff
-                    - Gut für BIOS, Boot Medien</td>
+                <td>NAND Flash</td>
+                <td>Bei der Verbindung zwischen der Bit-Line und dem Word-Line handet es sich um ein NAND Gate. Wird in
+                    SSDs und USB Sticks verwendet.</td>
+                <td>
+                    <ul>
+                        <li>Schnell</li>
+                        <li>Klein</li>
+                        <li>Geeignet für Speicher</li>
+                        <li>Zugriff über Blöcke</li>
+                    </ul>
+                </td>
+                <td>
+                    <ul>Begrenzte Anzahl von Löschvorgängen</ul>
+                </td>
             </tr>
             <tr>
                 <td>Nebenläufige und Parallele Programme</td>
                 <td>Nebenläufig
-                    - Getrennte Aufgaben
-                    - Lose Kooperation
-                    - Bsp. GUI, E/A
+                    <ul>
+                        <li>Getrennte Aufgaben</li>
+                        <li>Lose Kooperation</li>
+                        <li>Bsp. GUI, E/A</li>
+                    </ul>
 
                     Parallel
-                    - Gemeinsame Aufgabe
-                    - Enge Kopplung
-                    - Bsp. numerische Simulation, Suchalgorithmen</td>
+                    <ul>
+                        <li>Gemeinsame Aufgabe</li>
+                        <li>Enge Kopplung</li>
+                        <li>Bsp. numerische Simulation, Suchalgorithmen</li>
+                    </ul>
+                </td>
+                <td></td>
+                <td></td>
             </tr>
             <tr>
-                <td>NIC</td>
-                <td>Network Interface Card</td>
+                <td><a href="https://en.wikipedia.org/wiki/Network_interface_controller" target="_blank"
+                        rel="noopener noreferrer">NIC</a></td>
+                <td><b>Network Interface Card</b> Komponente im Computer die den Computer mit einem Netzwerk verbindet.
+                </td>
+                <td></td>
+                <td></td>
             </tr>
             <tr>
                 <td>Non-uniform Memory Access</td>
-                <td>- Speicher ist verteilt über mehrere Kerne
-                    - Inter-Kern Netzwerk
-                    - Standard, da Controller im Prozessor
-                    -> Schnelle lokale Zugriffe
-                    -> Datenplatzierung wichtig</td>
+                <td>
+                    <ul>
+                        <li>Speicher ist verteilt über mehrere Kerne</li>
+                        <li>Inter-Kern Netzwerk</li>
+                    </ul>
+                </td>
+                <td>
+                    <ul>
+                        <li>Schnelle lokale Zugriffe</li>
+                    </ul>
+                </td>
+                <td>
+                    <ul>
+                        <li>Datenplatzierung wichtig</li>
+                    </ul>
+                </td>
             </tr>
             <tr>
-                <td>NPN Transistor</td>
+                <td>NOR Flash</td>
+                <td>Bei der Verbindung zwischen der Bit-Line und dem Word-Line handet es sich um ein NOR Gate. Gut für
+                    BIOS und andere Boot Medien.</td>
+                <td>
+                    <ul>
+                        <li>Zuverlässiger als NAND Flash</li>
+                        <li>Einzelzugriff</li>
+                    </ul>
+                </td>
+                <td></td>
+            </tr>
+            <tr>
+                <td><a href="https://en.wikipedia.org/wiki/Bipolar_junction_transistor#NPN" target="_blank"
+                        rel="noopener noreferrer">NPN Transistor</a></td>
                 <td>NPN ist ein Arbeitskontakt -> Leitend, falls Strom anliegt</td>
+                <td></td>
+                <td></td>
             </tr>
             <tr>
-                <td>Out-Of-Order</td>
+                <td><a href="https://en.wikipedia.org/wiki/Out-of-order_execution" target="_blank"
+                        rel="noopener noreferrer">Out-of-Order Execution</a></td>
                 <td>Auch dynamisches Scheduling genannt.
-                    Unabhängige Instruktionen können ausgeführt werden, obwohl vorherige Operationen blockiert sind.
-                    Trotzdem transparent</td>
+                    Unabhängige Instruktionen können ausgeführt werden, obwohl vorherige Operationen blockiert sind,
+                    trotzdem transparent</td>
+                <td>
+                    <ul>
+                        <li>Bessere Nutzung der Ressourcen</li>
+                        <li>Bessere Nutzung von Parallelität</li>
+                        <li>Möglichkeit mehrere gleiche Befehle anzustossen</li>
+                    </ul>
+                </td>
+                <td>
+                    <ul>
+                        <li>Erhöhte Buchhaltunkgskomplexität</li>
+                        <li>Speicher muss konsistent gehalten werden -> Reorder Buffers notwendig</li>
+                    </ul>
+                </td>
             </tr>
             <tr>
                 <td>PAL / GAL</td>
-                <td>Programmable/General Array Logic
-                    UND programmierbar
-                    ODER fest
+                <td><b>Programmable/General Array Logic</b> UND programmierbar, ODER fest
 
-                    PAL -> Non-Volatile
-                    GAL -> Volatile</td>
+                    <ul>
+                        <li> PAL -> Non-Volatile</li>
+                        <li> GAL -> Volatile</li>
+                    </ul>
+                </td>
+                <td></td>
+                <td></td>
             </tr>
             <tr>
                 <td>Physically Indexed Cache</td>
                 <td>Cache nach MMU, Cache arbeitet mit physikalischen Adressen
-                    + Überlebt Prozesswechsel
-                    + Gut für grosse Caches
-                    - Jeder Zugriff durch MMU</td>
+                </td>
+                <td>
+                    <ul>
+                        <li>Überlebt Prozesswechsel</li>
+                        <li>Gut für grosse Caches</li>
+                    </ul>
+                </td>
+                <td>
+                    <ul>
+                        <li>Jeder Zugriff durch MMU</li>
+                    </ul>
+                </td>
             </tr>
             <tr>
                 <td>Pipeline Control Hazard</td>
                 <td>Verursacht durch Sprünge, da Befehl unbekannt</td>
+                <td></td>
+                <td></td>
             </tr>
             <tr>
                 <td>Pipeline Data Hazard</td>
                 <td>Datenabhängigkeiten nicht erfüllt</td>
+                <td></td>
+                <td></td>
             </tr>
             <tr>
                 <td>Pipeline Structural Hazard</td>
                 <td>Ressourcenprobleme in der Hardware</td>
+                <td></td>
+                <td></td>
             </tr>
             <tr>
                 <td>Pipelining</td>
-                <td>- Bearbeitung eines Objekts in Teilschritte zerlegt, sequentiell ausgeführt
-                    - Die Phasen werden für verschiedene Objekte überlappend abgearbeitet
-                    - Software oder Hardware</td>
+                <td>Bearbeitung eines Objekts wird in Teilschritte zerlegt und sequentiell ausgeführt. Die Phasen werden
+                    für verschiedene Objekte überlappend abgearbeitet. <br>
+                    Kann sowohl in Software als auch in Hardware umgesetzt werden.</td>
+                <td></td>
+                <td></td>
             </tr>
             <tr>
                 <td>PLA</td>
-                <td>Programmable Logic Array
-                    Für DNFs, UND gefolgt von ODER, beides programmierbar</td>
+                <td><b>Programmable Logic Array</b> Für DNFs, UND gefolgt von ODER, beides programmierbar.</td>
+                <td></td>
+                <td></td>
             </tr>
             <tr>
                 <td>PLD</td>
-                <td>Programmable Logic Device</td>
-            </tr>
-            <tr>
-                <td>Probeme bei OoO Execution</td>
-                <td>- Erhöhte Buchhaltunkgskomplexität
-                    - Speicher muss konsistent gehalten werden -> Reorder Buffers</td>
+                <td><b>Programmable Logic Device</b>Allgemeiner Begriff der alle programmierbaren Schaltungen beschreibt
+                    wie SPLDs, CPLDs, und FPGAs.</td>
+                <td>
+                    <ul>
+                        <li>Einfach Aufgebaut</li>
+                        <li>Geeignet für "Rapid Prototyping"</li>
+                    </ul>
+                </td>
+                <td>
+                    <ul>
+                        <li>Langsamer & Kleiner als ASICs</li>
+                    </ul>
+                </td>
             </tr>
             <tr>
                 <td>PROM</td>
-                <td>Programmable Read-Only Memory
-                    UND fest
-                    ODER programmierbar
-
+                <td><b>Programmable Read-Only Memory</b> UND fest, ODER programmierbar.
+                    <br>
                     EPROM -> Erasable PROM, mit UV Licht
-                    EEPROM -> Electrcially EPROM</td>
+                    <br>
+                    EEPROM -> Electrcially EPROM
+                </td>
+                <td></td>
+                <td></td>
             </tr>
             <tr>
                 <td><a href="https://en.wikipedia.org/wiki/Reduced_instruction_set_computer" target="_blank">RISC</a>
@@ -926,45 +1017,63 @@
             </tr>
             <tr>
                 <td>ROM</td>
-                <td>Read Only Memory
-                    UND fest
-                    ODER fest</td>
+                <td><b>Read Only Memory</b> UND fest, ODER fest, dementsprechend nicht programmierbar.</td>
+                <td></td>
+                <td></td>
             </tr>
             <tr>
                 <td>SIMD</td>
-                <td>Single Instruction Multiple Data
-                    n Rechenwerke, 1 Leitwerk
-
+                <td><b>Single Instruction Multiple Data</b> n Rechenwerke, 1 Leitwerk
+                    <br>
                     -> Pipelines, Vectors, GPUs (Moderne GPUs sind MIMD, mehrere extreme SIMD Blöcke)
-                    Mehrere Daten werden durch einen Maschinenbefehl geleitet</td>
+                    <br>
+                    Mehrere Daten werden durch einen Maschinenbefehl geleitet.
+                </td>
+                <td></td>
+                <td></td>
             </tr>
             <tr>
                 <td>Simultaneous Multithreading (SMT)</td>
-                <td>Gleichzeitige Nutzung von Ressourcen, passt zu OoO und Superskalarität</td>
+                <td>Gleichzeitige Nutzung von Ressourcen, passt zu OoO und Superskalarität.</td>
+                <td></td>
+                <td></td>
             </tr>
             <tr>
                 <td>SISD</td>
-                <td>Single Instruction Single Data
-                    1 Rechenwerk, 1 Leitwerk
+                <td><b>Single Instruction Single Data</b> 1 Rechenwerk, 1 Leitwerk <br>
 
                     -> Seq. Verarbeitung von Neumann</td>
+                <td></td>
+                <td></td>
             </tr>
             <tr>
                 <td>Software Prefetching</td>
-                <td>Explizite Instruktionen
-                    + Unregelmässige Zugriffe können verbessert werden
-                    - Benötigt Codeänderungen
-
-                    Generell ist Software Prefetching nicht blockierend und erzeugt keine Ausnahmen</td>
+                <td>Explizite Instruktionen welche Daten in den Cache laden.
+                </td>
+                <td>
+                    <ul>
+                        <li>Unregelmässige Zugriffe können verbessert werden</li>
+                        <li>Generell ist Software Prefetching nicht blockierend und erzeugt keine Ausnahmen</li>
+                    </ul>
+                </td>
+                <td>
+                    <ul>
+                        <li>Benötigt Codeänderungen und ist dementsprechend nicht transparent</li>
+                    </ul>
+                </td>
             </tr>
             <tr>
                 <td>Spin-Locks</td>
                 <td>Busy waiting -> Siehe EIDI</td>
+                <td></td>
+                <td></td>
             </tr>
             <tr>
                 <td>SPLD</td>
-                <td>simple programmable logic device
-                    Schaltnetz aus einem UND und einem ODER Array. Beide evtl. programmierbar</td>
+                <td><b>Simple Programmable Logic Device</b> Schaltnetz aus einem UND und einem ODER Array. Beide evtl.
+                    programmierbar</td>
+                <td></td>
+                <td></td>
             </tr>
             <tr>
                 <td>SRAM</td>
@@ -975,7 +1084,13 @@
                     Schreiben: Bit auf 1, Nicht Bit auf 0, Select auf 1, Inverter pegeln sich ein
                     Lesen: Bit auf 1, Nicht Bit auf 1, Inverter ziehen somit einen Ausgang auf 0, Spannungsabfall wird
                     gemessen</td>
-                <td></td>
+                <td>
+                    <ul>
+                        <li>Behält Wert solange Strom</li>
+                        <li>Sehr schnell (1 - 30 ns)</li>
+                        <li>Unempfindlich</li>
+                    </ul>
+                </td>
                 <td>
                     <ul>
                         <li>Relativ gross & teuer</li>
@@ -985,90 +1100,150 @@
             </tr>
             <tr>
                 <td>Stream Devices</td>
-                <td>- Abstraktion im BS: Reihe/Strom von Bytes
-                    - Zugriff meist sequentiell
-                    - z.B. Tastatur, Serielle Schnittstellen</td>
+                <td>
+                    <ul>
+                        <li>Abstraktion im BS: Reihe/Strom von Bytes</li>
+                        <li>Zugriff meist sequentiell</li>
+                        <li>z.B. Tastatur, Serielle Schnittstellen</li>
+                    </ul>
+                </td>
+                <td></td>
+                <td></td>
             </tr>
             <tr>
                 <td>Structural Programming (VHDL)</td>
-                <td>Verbundenen einzelne Komponenten
-
-                    + Volle Kontrolle
-                    - Aufwendig</td>
+                <td>Verbundenen einzelne Komponenten, beschreibt einzelene Schaultungen welche hierarchisch Verbunden
+                    werden.</td>
+                <td>
+                    <ul>
+                        <li>Volle Kontrolle</li>
+                    </ul>
+                </td>
+                <td>
+                    <ul>
+                        <li>Aufwendig</li>
+                    </ul>
+                </td>
             </tr>
             <tr>
                 <td>Superskalarprinzip</td>
                 <td>Ein superskalarer Prozessor verfügt im Vergleich zu einem Prozessor mit sequentieller Pipeline über
-                    die n-fache Anzahl von Funktionseinheiten, Datenpfaden, Dekodierern, etc. -> n Befehle gleichzeitig
-                    ausführen</td>
+                    die n-fache Anzahl von Funktionseinheiten, Datenpfaden, Dekodierern, etc. -> n Befehle können
+                    gleichzeitig ausfgeführt werden.</td>
+                <td></td>
+                <td></td>
             </tr>
             <tr>
                 <td>Systemmodus</td>
-                <td>• Voller (=privilegierter) Zugriff auf alle Rechnerkomponenten
-                    • Für das Betriebssystem</td>
-            </tr>
-            <tr>
-                <td>Thread vs Prozess</td>
-                <td>Threads sind eng gekoppelt
-                    - Gemeinsamer Adressraum
-                    - Schnelle Umschaltung
-                    - Gemeinsame Ressourcen (Dateien...)
-
-                    Prozesse sind lose gekoppelt
-                    - Getrennte Adressräume
-                    - Bessere Isolierung</td>
+                <td>
+                    <ul>
+                        <li>Voller (=privilegierter) Zugriff auf alle Rechnerkomponenten</li>
+                        <li>Für das Betriebssystem</li>
+                    </ul>
+                </td>
+                <td></td>
+                <td></td>
             </tr>
             <tr>
                 <td>TLB</td>
-                <td>Translation Lookaside Buffer - small cache of page table entries in the MMU used to speed up address
-                    translation</td>
+                <td><b>Translation Lookaside Buffer</b> Kleiner Cache mit Page Table Einträgen in der MMU um
+                    Addreessübersetzung zu beschleunigen</td>
+                <td></td>
+                <td></td>
             </tr>
             <tr>
                 <td>Uniform Memory Access (UMA)</td>
-                <td>- Zentraler gemeinsamer Speicher
-                    - Zugriffe haben gleiche Latenz (ausser durch Caches)
-                    - Busse oder Crossbars</td>
+                <td>
+                    <ul>
+                        <li>Zentraler gemeinsamer Speicher</li>
+                        <li>Zugriffe haben gleiche Latenz (ausser durch Caches)</li>
+                        <li>Busse oder Crossbar</li>
+                    </ul>
+                </td>
+                <td></td>
+                <td></td>
             </tr>
-            <tr>
-                <td>Unterschied Pipelining und Superskalarität</td>
-                <td>Pipelining: Mehrere verschiedene Stufen gleichzeitig
-                    Superskalar: Mehrere gleiche Einheiten gleichzeitig
 
-                    -> Beide erlauben Parallelität, ergänzen sich</td>
-            </tr>
             <tr>
                 <td>Virtually Indexed Cache</td>
-                <td>Cache vor MMU, Cache arbeitet also mit virtuellen Adressen
-                    + Direkter Zugang zu Cache ohne Übersetzung
-                    + Gut für kleine Caches
-                    - Mehrere Prozesse verwenden die gleichen virtuellen Adressen -> Cache löschen bei Prozesswechsel /
-                    Tag + PID</td>
+                <td>Cache vor MMU, Cache arbeitet also mit virtuellen Adressen.</td>
+                <td>
+                    <ul>
+                        <li>Direkter Zugang zu Cache ohne Übersetzung</li>
+                        <li>Gut für kleine Caches</li>
+                    </ul>
+                </td>
+                <td>
+                    Mehrere Prozesse verwenden die gleichen virtuellen Adressen. <br>
+                    Lösungen:
+                    <ul>
+                        <li>Cache löschen bei Prozesswechsel </li>
+                        <li> Im Tag wird auch die PID gespeichert</li>
+                    </ul>
+                    Beide Lösungen führen zur Verlangsamung und erhöhter Aufwendigkeit.
+                </td>
             </tr>
             <tr>
                 <td>VLIW</td>
-                <td>Very Long Instruction Word
-                    Mehrere Instruktionen in einem Befehl, spezielle Prozessoren
-                    + Explizite Abhängigkeiten -> Einfachere Hardware
-                    + Explizites Scheduling -> Einfachere Hardware
-                    - Komplexe, nicht kompatible ISAs
-                    - Beruht auf Fähigkeiten des Compilers</td>
+                <td><b>Very Long Instruction Word</b> Mehrere Instruktionen in einem Befehl, spezielle Prozessoren.
+                </td>
+                <td>
+                    <ul>
+                        <li>Explizite Abhängigkeiten -> Einfachere Hardware</li>
+                        <li>Explizites Scheduling -> Einfachere Hardware</li>
+                    </ul>
+                </td>
+                <td>
+                    <ul>
+                        <li>Komplexe, nicht kompatible ISAs</li>
+                        <li>Beruht auf Fähigkeiten des Compilers</li>
+                    </ul>
+                </td>
             </tr>
             <tr>
                 <td>VLSI</td>
-                <td>Very-large-scale integration is a manufacturing technique by which many thousands of transistors are
-                    combined into a single chip.</td>
+                <td><b>Very-large-scale Integration</b> ist eine Herstellungstechnologie bei der viele Tausende
+                    Transistoren in einen einzelnen Chip integriert werden.</td>
+                <td></td>
+                <td></td>
             </tr>
             <tr>
                 <td>Volatile</td>
                 <td>Erneut Programmierbar</td>
+                <td></td>
+                <td></td>
             </tr>
             <tr>
                 <td>Voll assoziativer Cache</td>
-                <td>- Jede Adresse kann auf jede Cache Zeile abgebildet werden
-                    - Nur ein "Cache Set"
-                    - Keine Index bits
-                    - Grösste Flexibilität
-                    - Grösse Komplexität</td>
+                <td>Jede Adresse kann auf jede Cache Zeile abgebildet werden, es existiert nur ein "Cache Set".
+                </td>
+                <td>
+                    <ul>
+                        <li>Keine Index bits</li>
+                        <li>Grösste Flexibilität</li>
+                    </ul>
+                </td>
+                <td>
+                    <ul>
+                        <li>Komplex</li>
+                    </ul>
+                </td>
+            </tr>
+            <tr>
+                <td>Von-Neumann Architekturkonzept</td>
+                <td>
+                    <ol>
+                        <li>Strukturunabhängigkeit des Rechners</li>
+                        <li>4 Werke</li>
+                        <li>Sequentiell, Befehle nacheinander gespeichert & ausgeführt</li>
+                        <li>Binär</li>
+                        <li>Programme & Daten in einem Speicher</li>
+                        <li>Speicher besteht aus Zeilen fester Grösse</li>
+                        <li>Sprünge möglich</li>
+                    </ol>
+                </td>
+                <td></td>
+                <td></td>
             </tr>
             <tr>
                 <td>Vor und Nachteile GPU</td>
@@ -1090,29 +1265,32 @@
                     - Vorhersagbarkeit</td>
             </tr>
             <tr>
-                <td>Vorteile OoO Execution</td>
-                <td>- Bessere Nutzung der Ressourcen
-                    - Bessere Nutzung von Parallelität
-                    - Möglichkeit mehrere gleiche Befehle anzustossen</td>
-            </tr>
-            <tr>
-                <td>Vorteile SRAM</td>
-                <td>- Behält Wert solange Strom
-                    - Sehr schnell (1 - 30 ns)
-                    - Unempfindlich</td>
-            </tr>
-            <tr>
-                <td>Vorteile und Nachteile von misaligned data</td>
-                <td>Vorteile:
-                    • Lückenlose Nutzung des Speichers bei Mischung verschiedener Datenformate
-                    • Bessere Kompatibilität zu älteren ISAs
-                    Nachteile:
-                    • Ggf. zusätzliche Speicherzugriffe notwendig
-                    • Höherer Hardware-Aufwand erforderlich</td>
-            </tr>
-            <tr>
                 <td>Yielding Locks</td>
                 <td>Falls Lock vergeben, gebe Thread ab</td>
+                <td></td>
+                <td></td>
+            </tr>
+        </table>
+
+        <h2>Vergeleiche</h2>
+        <table>
+            <tr>
+                <td>Thread vs Prozess</td>
+                <td>Threads sind eng gekoppelt
+                    - Gemeinsamer Adressraum
+                    - Schnelle Umschaltung
+                    - Gemeinsame Ressourcen (Dateien...)
+
+                    Prozesse sind lose gekoppelt
+                    - Getrennte Adressräume
+                    - Bessere Isolierung</td>
+            </tr>
+            <tr>
+                <td>Unterschied Pipelining und Superskalarität</td>
+                <td>Pipelining: Mehrere verschiedene Stufen gleichzeitig
+                    Superskalar: Mehrere gleiche Einheiten gleichzeitig
+
+                    -> Beide erlauben Parallelität, ergänzen sich</td>
             </tr>
         </table>
     </div>
