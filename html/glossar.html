@@ -514,6 +514,23 @@
                 <td></td>
             </tr>
             <tr>
+                <td><a href="https://en.wikipedia.org/wiki/Graphics_processing_unit" target="_blank"
+                        rel="noopener noreferrer">GPU</a></td>
+                <td>Eine <b>Graphics Processing Unit</b> ist eine VLSI welcher auf extremes SIMD setzt.</td>
+                <td>
+                    <ul>
+                        <li>Reduziert die Komplexität des Prozessors</li>
+                        <li>Erhöhte Energieeffizienz</li>
+                    </ul>
+                </td>
+                <td>
+                    <ul>
+                        <li>Verrignerte Softwareflexibilität (Muss SIMD nutzen)</li>
+                        <li>Zusätzlicher Programmieraufwand</li>
+                    </ul>
+                </td>
+            </tr>
+            <tr>
                 <td>Gründe für Moduswechsel</td>
                 <td>
                     <ul>
@@ -1245,25 +1262,6 @@
                 <td></td>
             </tr>
             <tr>
-                <td>Vor und Nachteile GPU</td>
-                <td>+ Reduziert die Komplexität des Prozessors
-                    + Erhöht Energieeffizienz
-                    - Verrignerte Softwareflexibilität (Muss SIMD nutzen)
-                    - Zusätzlicher Programmieraufwand</td>
-            </tr>
-            <tr>
-                <td>Vorteile FPGA vs ASIC</td>
-                <td>- Rekonfigurierbar
-                    - Preis
-                    - "Time to Market"</td>
-            </tr>
-            <tr>
-                <td>Vorteile FPGA vs CPU</td>
-                <td>- Geschwindigkeit
-                    - Durchsatz
-                    - Vorhersagbarkeit</td>
-            </tr>
-            <tr>
                 <td>Yielding Locks</td>
                 <td>Falls Lock vergeben, gebe Thread ab</td>
                 <td></td>
@@ -1272,24 +1270,75 @@
         </table>
 
         <h2>Vergeleiche</h2>
-        <table>
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th scope="col">Begriff</th>
+                    <th scope="col">Vergleich</th>
+                    <th scope="col">Gemeinsamkeiten</th>
+                </tr>
+            </thead>
             <tr>
-                <td>Thread vs Prozess</td>
-                <td>Threads sind eng gekoppelt
-                    - Gemeinsamer Adressraum
-                    - Schnelle Umschaltung
-                    - Gemeinsame Ressourcen (Dateien...)
-
-                    Prozesse sind lose gekoppelt
-                    - Getrennte Adressräume
-                    - Bessere Isolierung</td>
+                <td><b>FPGA</b>
+                    <ul>
+                        <li>Rekonfigurierbar</li>
+                        <li>Günstig</li>
+                        <li>Schnelle Entwicklung ("Time to Market")</li>
+                    </ul>
+                </td>
+                <td><b>ASIC</b>
+                    <ul>
+                        <li>Deutlich schneller</li>
+                        <li>Kann für spezielle Einsatzgebiete gebaut werden</li>
+                        <li>Hoch spezialisiert</li>
+                    </ul>
+                </td>
+                <td></td>
             </tr>
             <tr>
-                <td>Unterschied Pipelining und Superskalarität</td>
-                <td>Pipelining: Mehrere verschiedene Stufen gleichzeitig
-                    Superskalar: Mehrere gleiche Einheiten gleichzeitig
-
-                    -> Beide erlauben Parallelität, ergänzen sich</td>
+                <td><b>FPGA</b>
+                    <ul>
+                        <li>Schneller</li>
+                        <li>Höherer Durchsatz</li>
+                        <li>Bessere Vorhersagbarkeit</li>
+                    </ul>
+                </td>
+                <td><b>CPU</b>
+                    <ul>
+                    </ul>
+                </td>
+                <td></td>
+            </tr>
+            <tr>
+                <td><b>Pipelining</b>
+                    <ul>
+                        <li>Mehrere verschiedene Stufen gleichzeitig</li>
+                    </ul>
+                </td>
+                <td><b>Superskalar</b>
+                    <ul>
+                        <li>Mehrere gleiche Einheiten gleichzeitig</li>
+                    </ul>
+                </td>
+                <td>Beide erlauben Parallelität, ergänzen sich</td>
+            </tr>
+            <tr>
+                <td><b>Thread</b>
+                    <ul>
+                        <li>Eng gekoppelt</li>
+                        <li>Gemeinsamer Adressraum</li>
+                        <li>Schnelle Umschaltung</li>
+                        <li>Gemeinsame Ressourcen (Dateien...)</li>
+                    </ul>
+                </td>
+                <td><b>Prozesse</b>
+                    <ul>
+                        <li>Lose gekoppelt</li>
+                        <li>Getrennte Adressräume</li>
+                        <li>Bessere Isolierung</li>
+                    </ul>
+                </td>
+                <td></td>
             </tr>
         </table>
     </div>
