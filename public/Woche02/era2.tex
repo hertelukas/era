@@ -1,0 +1,162 @@
+%%
+% This is an Overleaf template for presentations
+% using the TUM Corporate Desing https://www.tum.de/cd
+%
+% For further details on how to use the template, take a look at our
+% GitLab repository and browse through our test documents
+% https://gitlab.lrz.de/latex4ei/tum-templates.
+%
+% The tumbeamer class is based on the beamer class.
+% If you need further customization please consult the beamer class guide
+% https://ctan.org/pkg/beamer.
+% Additional class options are passed down to the base class.
+%
+% If you encounter any bugs or undesired behaviour, please raise an issue
+% in our GitLab repository
+% https://gitlab.lrz.de/latex4ei/tum-templates/issues
+% and provide a description and minimal working example of your problem.
+%%
+
+
+\documentclass[
+  german,            % define the document language (english, german)
+  aspectratio=169,    % define the aspect ratio (169, 43)
+  % handout=2on1,       % create handout with multiple slides (2on1, 4on1)
+  % partpage=false,     % insert page at beginning of parts (true, false)
+  sectionpage=false,   % insert page at beginning of sections (true, false)
+]{tumbeamer}
+
+
+% load additional packages
+\usepackage{booktabs}
+\usepackage{listings}
+
+
+% presentation metadata
+\title{Einführung in die Rechnerarchitektur}
+\subtitle{Assembler}
+\author{Lukas Hertel}
+
+\institute{\theChairName\\\theDepartmentName\\\theUniversityName}
+\date[01.11.2021]{11. November 2021}
+
+\footline{\insertauthor~|~\insertshorttitle~|~\insertshortdate}
+
+
+% macro to configure the style of the presentation
+\TUMbeamersetup{
+  title page = TUM tower,         % style of the title page
+  part page = TUM toc,            % style of part pages
+  section page = TUM toc,         % style of section pages
+  content page = TUM more space,  % style of normal content pages
+  tower scale = 1.0,              % scaling factor of TUM tower (if used)
+  headline = TUM threeliner,      % which variation of headline to use
+  footline = TUM default,         % which variation of footline to use
+  % configure on which pages headlines and footlines should be printed
+  headline on = {title page},
+  footline on = {every page, title page=false},
+}
+
+% available frame styles for title page, part page, and section page:
+% TUM default, TUM tower, TUM centered,
+% TUM blue default, TUM blue tower, TUM blue centered,
+% TUM shaded default, TUM shaded tower, TUM shaded centered,
+% TUM flags
+%
+% additional frame styles for part page and section page:
+% TUM toc
+%
+% available frame styles for content pages:
+% TUM default, TUM more space
+%
+% available headline options:
+% TUM empty, TUM oneliner, TUM twoliner, TUM threeliner, TUM logothreeliner
+%
+% available footline options:
+% TUM empty, TUM default, TUM infoline
+
+
+\begin{document}
+
+\maketitle
+
+\section{Hausaufgabe}
+\begin{frame}{Hausaufgabe}
+	\begin{itemize}
+		\item $(00011010)_2 + (00100011)_2 = (?)_2$
+		\item $(00110110)_2 - (00101010)_2 = (?)_2$
+		\item $(00011110)_2 \cdot (00000101)_2 = (?)_2$
+	\end{itemize}
+\end{frame}
+
+\section{Einführung}
+\begin{frame}{Themen}
+	\begin{itemize}
+		\item Tutorblatt
+		\begin{itemize}
+			\item Registerbenutzung und Konstanten (MOV)
+			\item MOV in ASM vs. Variablen in Hochsprachen
+			\item Arithmetische Begriffe (ADD, SUB, NEG, MUL, DIV, MOD)
+			\item Assembler zu Maschinencode
+		\end{itemize}
+		\item Hausaufgabe
+		\begin{itemize}
+			\item Festkommarechnung
+		\end{itemize}
+	\end{itemize}
+\end{frame}
+\begin{frame}{NASM}{Netwide Assembler}
+	\begin{itemize}
+		\item Plattformunabhängiger Assembler für x86 CPU Architektur
+		\item Kommandozeilenwerkzeug
+		\item Manuelles Kompilieren von Code, Syntax
+		\item SASM basiert auf NASM
+	\end{itemize}
+\end{frame}
+\begin{frame}{SASM}{SimpleASM}
+	\begin{itemize}
+		\item Grafische Entwicklungsumgebung für ASM
+		\item Kompilieren, Debugging, I/0
+		\item Benötigt Assemblierer und C-Compiler (z.B. nasm \& gcc)
+		\item \href{https://dman95.github.io/SASM}{Link} für die Installation
+	\end{itemize}
+\end{frame}
+\section{Aufgabe 1}
+\begin{frame}{Von-Neumann-Architektur}
+	
+\end{frame}
+\begin{frame}[fragile]{Register}{Teilregister von EAX}
+\begin{table}[]
+	\begin{tabular}{llllllll}
+		0000 & 0000 & 0000 & \multicolumn{1}{l|}{0000} & 0000 & 0000 & 0000 & 0000 \\
+		&  &  &  &  &  &  &  \\
+		&  &  & \multicolumn{1}{l|}{} &  &  &  &  \\
+		&  &  & \multicolumn{1}{l|}{} &  & \multicolumn{1}{l|}{} &  & 
+	\end{tabular}
+\end{table}
+\end{frame}
+\section{Aufgabe 2}
+\begin{frame}{Aufgabe 2}{Unterschied MOV vs. Variablenzuweisung}
+\end{frame}
+\section{Aufgabe 3}
+\begin{frame}{Aufgabe 3}{Arithmetische Befehle}
+	\begin{itemize}
+		\item ADD A, B => $A = A + B$
+		\begin{itemize}
+			\item MOV, SUB, AND, OR
+		\end{itemize}
+		\item NEG A => $A = -A$
+		\begin{itemize}
+			\item INC, DEC
+		\end{itemize}
+		\item MUL A -> $EDX:EAX = EAX * A$
+		\item DIV A -> $EDX:EAX = EDX:EAX / A$
+		\item IMUL (Signed multiply)
+		\begin{itemize}
+			\item A -> $EDX:EAX = EAX * A$
+			\item A, B -> $A = A * B$
+			\item A, B, C -> $A = B * C$
+		\end{itemize}
+	\end{itemize}
+\end{frame}
+\end{document}
