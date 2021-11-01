@@ -30,16 +30,14 @@
 % load additional packages
 \usepackage{booktabs}
 \usepackage{listings}
-\usepackage{graphicx}
-
 
 % presentation metadata
 \title{Einführung in die Rechnerarchitektur}
-\subtitle{Assembler}
+\subtitle{Speicherwerk und Stack}
 \author{Lukas Hertel}
 
 \institute{\theChairName\\\theDepartmentName\\\theUniversityName}
-\date[01.11.2021]{11. November 2021}
+\date[08.11.2021]{08. November 2021}
 
 \footline{\insertauthor~|~\insertshorttitle~|~\insertshortdate}
 
@@ -83,81 +81,63 @@
 
 \section{Hausaufgabe}
 \begin{frame}{Hausaufgabe}
-	\begin{itemize}
-		\item $(00011010)_2 + (00100011)_2 = (?)_2$
-		\item $(00110110)_2 - (00101010)_2 = (?)_2$
-		\item $(00011110)_2 \cdot (00000101)_2 = (?)_2$
-	\end{itemize}
-\end{frame}
 
-\section{Einführung}
-\begin{frame}{Themen}
-	\begin{itemize}
-		\item Tutorblatt
-		\begin{itemize}
-			\item Registerbenutzung und Konstanten (MOV)
-			\item MOV in ASM vs. Variablen in Hochsprachen
-			\item Arithmetische Begriffe (ADD, SUB, NEG, MUL, DIV, MOD)
-			\item Assembler zu Maschinencode
-		\end{itemize}
-		\item Hausaufgabe
-		\begin{itemize}
-			\item Festkommarechnung
-		\end{itemize}
-	\end{itemize}
-\end{frame}
-\begin{frame}{NASM}{Netwide Assembler}
-	\begin{itemize}
-		\item Plattformunabhängiger Assembler für x86 CPU Architektur
-		\item Kommandozeilenwerkzeug
-		\item Manuelles Kompilieren von Code, Syntax
-		\item SASM basiert auf NASM
-	\end{itemize}
-\end{frame}
-\begin{frame}{SASM}{SimpleASM}
-	\begin{itemize}
-		\item Grafische Entwicklungsumgebung für ASM
-		\item Kompilieren, Debugging, I/0
-		\item Benötigt Assemblierer und C-Compiler (z.B. nasm \& gcc)
-		\item \href{https://dman95.github.io/SASM}{Link} für die Installation
-	\end{itemize}
 \end{frame}
 \section{Aufgabe 1}
-\begin{frame}{Von-Neumann-Architektur}
-	
+\begin{frame}{Speicherorganisation}{Speicherpyramide}
 \end{frame}
-\begin{frame}[fragile]{Register}{Teilregister von EAX}
-\begin{table}[]
-	\begin{tabular}{llllllll}
-		0000 & 0000 & 0000 & \multicolumn{1}{l|}{0000} & 0000 & 0000 & 0000 & 0000 \\
-		&  &  &  &  &  &  &  \\
-		&  &  & \multicolumn{1}{l|}{} &  &  &  &  \\
-		&  &  & \multicolumn{1}{l|}{} &  & \multicolumn{1}{l|}{} &  & 
+\begin{frame}{Speicherorganisation}{Struktur}
+	\begin{itemize}
+		\item Wie ist der Speicher strukturiert?
+		\item Wie ist der Speicher mit dem Leit- und Rechenwerk verbunden?
+		\item Was muss man beim Datenzugriff beachten, wenn das gesuchte Datenwort im Cache
+		steht?
+	\end{itemize}
+\end{frame}
+\begin{frame}{Speicherorganisation}{Little- und Big-Endian}
+	\begin{itemize}
+		\item Was ist der Unterschied zwischen Little- und Big-Endian?
+		\item Ablage des Wortes 0x76543210 im Speicher
+	\end{itemize}
+\vspace{1cm}
+\begin{minipage}[t]{0.45\textwidth}
+	Little Endian
+	\begin{tabular}{r|c|}
+		N+3 & \hspace{1cm} \\
+		N+2 & \\
+		N+1 & \\
+		Adresse N & \\
 	\end{tabular}
-\end{table}
+\end{minipage}
+\begin{minipage}[t]{0.45\textwidth}
+	Big Endian
+	\begin{tabular}{r|c|}
+		N+3 & \hspace{1cm} \\
+		N+2 & \\
+		N+1 & \\
+		Adresse N & \\
+	\end{tabular}
+\end{minipage}
+\end{frame}
+\begin{frame}{Speicherorganisation}{.bss und .data}
+	\begin{itemize}
+		\item \texttt{.bss} für statische Variablen die deklariert wurden, aber \textbf{nicht initialisiert}
+		\item \texttt{.data} für statische Variablen, die \textbf{initialisiert} wurden
+	\end{itemize}
 \end{frame}
 \section{Aufgabe 2}
-\begin{frame}{Aufgabe 2}{Unterschied MOV vs. Variablenzuweisung}
+\begin{frame}{Speicherzugriffe}
+	\begin{itemize}
+		\item \href{https://css.csail.mit.edu/6.858/2015/readings/i386.pdf}{i386 manual}
+	\end{itemize}
+\end{frame}
+\begin{frame}{Speicherzugriffe}
+	\begin{itemize}
+		\item \href{https://css.csail.mit.edu/6.858/2015/readings/i386.pdf}{i386 manual}
+		\item Auf der x86 Architektur kann immer nur ein Operand ein Speicherzugriff sein
+	\end{itemize}
 \end{frame}
 \section{Aufgabe 3}
-\begin{frame}{Aufgabe 3}{Arithmetische Befehle}
-	\begin{itemize}
-		\item ADD A, B => $A = A + B$
-		\begin{itemize}
-			\item MOV, SUB, AND, OR
-		\end{itemize}
-		\item NEG A => $A = -A$
-		\begin{itemize}
-			\item INC, DEC
-		\end{itemize}
-		\item MUL A -> $EDX:EAX = EAX * A$
-		\item DIV A -> $EDX:EAX = EDX:EAX / A$
-		\item IMUL (Signed multiply)
-		\begin{itemize}
-			\item A -> $EDX:EAX = EAX * A$
-			\item A, B -> $A = A * B$
-			\item A, B, C -> $A = B * C$
-		\end{itemize}
-	\end{itemize}
+\begin{frame}{Zeichenketten \& Arrays}{Adressierungsarten}
 \end{frame}
 \end{document}
