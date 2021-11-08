@@ -33,11 +33,11 @@
 
 % presentation metadata
 \title{Einführung in die Rechnerarchitektur}
-\subtitle{Speicherwerk und Stack}
+\subtitle{}
 \author{Lukas Hertel}
 
 \institute{\theChairName\\\theDepartmentName\\\theUniversityName}
-\date[08.11.2021]{08. November 2021}
+\date[15.11.2021]{15. November 2021}
 
 \footline{\insertauthor~|~\insertshorttitle~|~\insertshortdate}
 
@@ -81,73 +81,14 @@
 
 \section{Hausaufgabe}
 \begin{frame}{Hausaufgabe}
-
+	
 \end{frame}
 \section{Aufgabe 1}
 \begin{frame}{Speicherorganisation}{Speicherpyramide}
 \end{frame}
 \begin{frame}{Speicherorganisation}{Struktur}
 	\begin{itemize}
-		\item Wie ist der Speicher strukturiert?
-		\item Wie ist der Speicher mit dem Leit- und Rechenwerk verbunden?
-		\item Was muss man beim Datenzugriff beachten, wenn das gesuchte Datenwort im Cache
-		steht?
+		\item Nice
 	\end{itemize}
-\end{frame}
-\begin{frame}{Speicherorganisation}{Little- und Big-Endian}
-	\begin{itemize}
-		\item Was ist der Unterschied zwischen Little- und Big-Endian?
-		\item Ablage des Wortes 0x76543210 im Speicher
-	\end{itemize}
-\vspace{1cm}
-\begin{minipage}[t]{0.45\textwidth}
-	Little Endian
-	\begin{tabular}{r|c|}
-		N+3 & \hspace{1cm} \\
-		N+2 & \\
-		N+1 & \\
-		Adresse N & \\
-	\end{tabular}
-\end{minipage}
-\begin{minipage}[t]{0.45\textwidth}
-	Big Endian
-	\begin{tabular}{r|c|}
-		N+3 & \hspace{1cm} \\
-		N+2 & \\
-		N+1 & \\
-		Adresse N & \\
-	\end{tabular}
-\end{minipage}
-\end{frame}
-\begin{frame}{Speicherorganisation}{.bss und .data}
-	\begin{itemize}
-		\item \texttt{.bss} für statische Variablen die deklariert wurden, aber \textbf{nicht initialisiert}
-		\item \texttt{.data} für statische Variablen, die \textbf{initialisiert} wurden
-	\end{itemize}
-\end{frame}
-\section{Aufgabe 2}
-\begin{frame}{Speicherzugriffe}
-	\begin{itemize}
-		\item \href{https://css.csail.mit.edu/6.858/2015/readings/i386.pdf}{i386 manual}
-	\end{itemize}
-\end{frame}
-\begin{frame}{Speicherzugriffe}
-	\begin{itemize}
-		\item \href{https://css.csail.mit.edu/6.858/2015/readings/i386.pdf}{i386 manual}
-		\item Auf der x86 Architektur kann immer nur ein Operand ein Speicherzugriff sein
-	\end{itemize}
-\end{frame}
-\section{Aufgabe 3}
-\begin{frame}{Zeichenketten \& Arrays}{Adressierungsarten}
-	\begin{itemize}
-		\item Direkte Adressierung \texttt{MOV EAX, [ADRESSE]}
-		\item Indirekte Adressierung \texttt{MOV EAX, [ADRESSE + INDEX * SCALE + DISPLACEMENT]}
-		\begin{itemize}
-			\item SCALE muss 1, 2, 4 oder 8 sein
-		\end{itemize}
-	\end{itemize}
-\end{frame}
-\section{Aufgabe 4}
-\begin{frame}{Der Stack}
 \end{frame}
 \end{document}
