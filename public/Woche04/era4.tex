@@ -93,20 +93,20 @@
 \end{frame}
 \begin{frame}{Adressierung}{Zusammenfassung}
     \begin{itemize}
-        \item [BASE + (INDEX * SCALE) + DISPLACEMENT]
+        \item \texttt{[BASE + (INDEX * SCALE) + DISPLACEMENT]}
         \begin{itemize}
-            \item SCALE kann 1, 2 oder 4 sein
-            \item DISPLACEMENT kann 1 byte oder 4 byte gross sein
-            \item BASE und INDEX Register werden nicht verändert
+            \item \texttt{SCALE} kann 1, 2 oder 4 sein
+            \item \texttt{DISPLACEMENT} kann 1 byte oder 4 byte gross sein
+            \item \texttt{BASE} und \texttt{INDEX} Register werden nicht verändert
         \end{itemize}
     \end{itemize}
 \end{frame}
 \section{Aufgabe 1}
 \begin{frame}{Wiederholung zu Adressierungsformen}{\texttt[MOV EBX, [EAX + ECX * 4 + 12]}
     \begin{itemize}
-        \item Darstellung in RISC (Nur Base)
+        \item Darstellung in RISC (Nur \texttt{BASE})
         \item Kein \texttt{MUL} (da ineffizient)
-        \item Gleiche Register dürfen sich verändern wie im Original
+        \item Nur gleiche Register dürfen sich verändern wie im Original
         \item Vorteile/Nachteile
     \end{itemize}
 \end{frame}
