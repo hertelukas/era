@@ -83,12 +83,66 @@
 \begin{frame}{Hausaufgabe}
 	
 \end{frame}
-\section{Aufgabe 1}
-\begin{frame}{Speicherorganisation}{Speicherpyramide}
+\section{Adressierung}
+\begin{frame}{Adressierung bei RISC und CISC}
+    \begin{itemize}
+        \item Wie kann man auf Adressen zugreifen bei x86?
+        \item Ist das nötig? Wie machen das andere Plattformen?
+        \item Beispiele für RISC?
+    \end{itemize}
 \end{frame}
-\begin{frame}{Speicherorganisation}{Struktur}
-	\begin{itemize}
-		\item Nice
-	\end{itemize}
+\begin{frame}{Adressierung}{Zusammenfassung}
+    \begin{itemize}
+        \item [BASE + (INDEX * SCALE) + DISPLACEMENT]
+        \begin{itemize}
+            \item SCALE kann 1, 2 oder 4 sein
+            \item DISPLACEMENT kann 1 byte oder 4 byte gross sein
+            \item BASE und INDEX Register werden nicht verändert
+        \end{itemize}
+    \end{itemize}
+\end{frame}
+\section{Aufgabe 1}
+\begin{frame}{Wiederholung zu Adressierungsformen}{\texttt[MOV EBX, [EAX + ECX * 4 + 12]}
+    \begin{itemize}
+        \item Darstellung in RISC (Nur Base)
+        \item Kein \texttt{MUL} (da ineffizient)
+        \item Gleiche Register dürfen sich verändern wie im Original
+        \item Vorteile/Nachteile
+    \end{itemize}
+\end{frame}
+\section{Aufgabe 2}
+\begin{frame}[fragile]{Klassenstrukturen von Hochsprachen in Assembler}
+    \begin{semiverbatim}
+        class Struktur1{
+        public:
+            int wert;
+            int feld1[16];
+        };
+
+        class Struktur2{
+        public:
+            Struktur1* feld2[8];
+            int info;
+        };
+    \end{semiverbatim}                
+\end{frame}
+\section{Aufgabe 3}
+\begin{frame}{Programmsprünge}
+\end{frame}
+\section{Aufgabe 4}
+\begin{frame}{Unterprogrammaufruf}
+    \begin{itemize}
+        \item Unterschied Sprung \& Unterprogramm-Aufruf
+        \item Stack bei Unterprogrammaufruf
+    \end{itemize}
+\end{frame}
+\section{Aufgabe 5}
+\begin{frame}{Möglichkeiten für einen Unterprogrammaufruf mit Parametern}
+    \begin{itemize}
+        \item Register
+        \item Speicherstellen
+        \item Stack
+        \item Vorteile/Nachteile?
+     \end{itemize}
 \end{frame}
 \end{document}
