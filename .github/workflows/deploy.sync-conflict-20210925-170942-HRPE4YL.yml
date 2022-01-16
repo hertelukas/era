@@ -1,0 +1,43 @@
+name: CD
+
+# Controls when the workflow will run
+on:
+  # Triggers the workflow on push or pull request events but only for the main branch
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+
+# A workflow run is made up of one or more jobs that can run sequentially or in parallel
+jobs:
+  # This workflow contains a single job called "build"
+  build:
+    # The type of runner that the job will run on
+    runs-on: ubuntu-latest
+
+    # Steps represent a sequence of tasks that will be executed as part of the job
+    steps:
+      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
+      - uses: actions/checkout@v2
+
+      # Runs a single command using the runners shell
+      - name: FTP Deploy
+        # You may pin to the exact commit or the version.
+        # uses: SamKirkland/FTP-Deploy-Action@65c6a8f943bbf04faf9b59520a103318b418952e
+        uses: SamKirkland/FTP-Deploy-Action@4.1.0
+        with:
+          # ftp server
+          server: ${{secrets.ftps_server}}
+          # ftp username
+          username: ${{secrets.ftps_username}}
+          # ftp password
+          password: ${{secrets.ftps_password}}
+          # Server port to connect to (read your web hosts docs)
+          port: 21
+          # protocol to deploy with - ftp, ftps, or ftps-legacy
+          protocol: ftps
+          # Path to upload to on the server. Must end with trailing slash /
+          server-dir: /public_html/era/
+          # How verbose should the information be - minimal, standard, or verbose
+          log-level: standard
