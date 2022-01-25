@@ -1,0 +1,157 @@
+% LTex: language=de-DE
+%%
+% This is an Overleaf template for presentations
+% using the TUM Corporate Desing https://www.tum.de/cd
+%
+% For further details on how to use the template, take a look at our
+% GitLab repository and browse through our test documents
+% https://gitlab.lrz.de/latex4ei/tum-templates.
+%
+% The tumbeamer class is based on the beamer class.
+% If you need further customization please consult the beamer class guide
+% https://ctan.org/pkg/beamer.
+% Additional class options are passed down to the base class.
+%
+% If you encounter any bugs or undesired behaviour, please raise an issue
+% in our GitLab repository
+% https://gitlab.lrz.de/latex4ei/tum-templates/issues
+% and provide a description and minimal working example of your problem.
+%%
+
+
+\documentclass[
+  german,            % define the document language (english, german)
+  aspectratio=169,    % define the aspect ratio (169, 43)
+  % handout=2on1,       % create handout with multiple slides (2on1, 4on1)
+  % partpage=false,     % insert page at beginning of parts (true, false)
+  sectionpage=false,   % insert page at beginning of sections (true, false)
+]{tumbeamer}
+
+
+% load additional packages
+\usepackage{booktabs}
+\usepackage{listings}
+
+% presentation metadata
+\title{Einführung in die Rechnerarchitektur}
+\subtitle{Parallelisierung und Caches}
+\author{Lukas Hertel}
+
+\institute{\theChairName\\\theDepartmentName\\\theUniversityName}
+\date[31.01.2022]{31. Januar 2022}
+
+\footline{\insertauthor~|~\insertshorttitle~|~\insertshortdate}
+
+
+% macro to configure the style of the presentation
+\TUMbeamersetup{
+  title page = TUM tower,         % style of the title page
+  part page = TUM toc,            % style of part pages
+  section page = TUM toc,         % style of section pages
+  content page = TUM more space,  % style of normal content pages
+  tower scale = 1.0,              % scaling factor of TUM tower (if used)
+  headline = TUM threeliner,      % which variation of headline to use
+  footline = TUM default,         % which variation of footline to use
+  % configure on which pages headlines and footlines should be printed
+  headline on = {title page},
+  footline on = {every page, title page=false},
+}
+
+% available frame styles for title page, part page, and section page:
+% TUM default, TUM tower, TUM centered,
+% TUM blue default, TUM blue tower, TUM blue centered,
+% TUM shaded default, TUM shaded tower, TUM shaded centered,
+% TUM flags
+%
+% additional frame styles for part page and section page:
+% TUM toc
+%
+% available frame styles for content pages:
+% TUM default, TUM more space
+%
+% available headline options:
+% TUM empty, TUM oneliner, TUM twoliner, TUM threeliner, TUM logothreeliner
+%
+% available footline options:
+% TUM empty, TUM default, TUM infoline
+
+
+\begin{document}
+
+\maketitle
+
+\section{Wiederholung}
+\begin{frame}{Wiederholung}{Roofline Modell}
+  \begin{itemize}
+    \item Applikation limitiert durch
+    \begin{itemize}
+      \item Speichervolumen oder
+      \item Rechenleistung
+    \end{itemize}
+    \item x-Achse: Arithmetische Intensität
+    \item y-Achse: Rechenleistung
+    \item Schätzt Top-Performance von Programmen ab
+  \end{itemize}
+\end{frame}
+\begin{frame}{Wiederholung}{Parallele Leistungs Modelle}
+\begin{itemize}
+  \item Amdahl's Law
+  \begin{itemize}
+    \item Programme mit konstanter Problemgröße
+    \item Sequentieller Anteil $t_s$ und parallelisierbarer Anteil $t_p$
+    \item Normalisiert durch Gesamtanteil $s = t_s / (t_s + t_p)$ (Analog für $p$)
+    \item \textbf{Speedup}: $S_{Amdahl}(n) = \frac{1}{s+\frac{p}{n}}$ mit $n$ Prozessoren
+    \item Speedup ist beschränkt
+  \end{itemize}
+  \item Gustafson's Law 
+  \begin{itemize}
+    \item Problemgröße steigt mit Anzahl Prozessoren 
+    \item \textbf{Speedup}: $S_{Gustafson}(n)=s+n*p$
+    \item Speedup ist unbeschränkt
+  \end{itemize}
+\end{itemize}
+\end{frame}
+\section{Aufgabe 1}
+\begin{frame}{Performance von Computern}{FLOP/s: Floating Point Operations per second}
+  \begin{itemize}
+    \item Anzahl Kerne:
+    \item Bits, die berechnet werden, pro Kern:
+    \item Gleichzeitige Fließkommaoperationen pro Kern:
+    \item FLOP/s:
+  \end{itemize}
+\end{frame}
+\begin{frame}{Performance von Computern}{Speicherbandbreite}
+\end{frame}
+\begin{frame}{Performance von Computern}{Roofline Modell}
+\end{frame}
+\begin{frame}{Maximale Performance}
+\end{frame}
+\begin{frame}[fragile]{Speedup}{Elemente zählen}
+\begin{lstlisting}[language=C, mathescape]
+int count(node *head) {
+    node *cursor = head; $\textcolor{gray}{\texttt{//100ns}}$
+    int c = 0; $\textcolor{gray}{\texttt{//1ns}}$
+    //Solange cursor auf einen Knoten zeigt
+    while(cursor != nullptr) { $\textcolor{gray}{\texttt{//1ns}}$
+        c++; $\textcolor{gray}{\texttt{//1ns}}$
+        // Setzt Cursor auf den eigenen Listennachfolger
+        cursor = cursor->next; $\textcolor{gray}{\texttt{//100ns}}$
+    }
+    return c; $\textcolor{gray}{\texttt{//1ns}}$
+}
+\end{lstlisting}
+\end{frame}
+\begin{frame}[fragile]{Speedup}{Maximum}
+\begin{lstlisting}[language=C, mathescape]
+  int x[100];
+  ...
+  int find_max() {
+          int max_val = x[0];  $\textcolor{gray}{\texttt{//100ns}}$
+          for(int i=0; i<100; i++) {  $\textcolor{gray}{\texttt{//3ns}}$
+                  max_val = max(x[i], max_val);  $\textcolor{gray}{\texttt{//17ns}}$
+          }
+          return max_val;  $\textcolor{gray}{\texttt{//1ns}}$
+  }
+  \end{lstlisting}
+\end{frame}
+\end{document}
