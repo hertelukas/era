@@ -154,4 +154,23 @@ int count(node *head) {
   }
   \end{lstlisting}
 \end{frame}
+\begin{frame}{Auswertung von Speedupdiagrammen}{Parallelisierbarer Anteil}
+\end{frame}
+\begin{frame}{MESI}{Automat mit 4 Zuständen}
+  \begin{itemize}
+    \item Modified: Cachezeile geändert, Speicher nicht kohärent
+    \item Exclusive: Wert in einem Cache, unverändert
+    \item Shared: Wert in mindestens zwei Caches, kohärent
+    \item Ivalid: Cacheblock nicht gültig/veraltet
+  \end{itemize}
+  
+\end{frame}
+\begin{frame}{Cache in einem Multisocketsystem}
+  \begin{itemize}
+    \item 4 Prozessorsocke
+    \item 32 Byte Cache/Sockel
+    \item 4 Lines/Cache, 8 Byte lang
+    \item 256 Byte großer, byteadressierbarer Hauptspeicher
+  \end{itemize}
+\end{frame}
 \end{document}
